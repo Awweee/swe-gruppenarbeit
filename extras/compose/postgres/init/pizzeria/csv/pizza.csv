@@ -1,0 +1,22 @@
+id;name;kosten;zutaten;pizzeria_id
+1;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";1
+2;Salami;10.50;"Tomatensauce, Mozzarella, Salami";1
+3;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";1
+4;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";2
+5;Salami;10.50;"Tomatensauce, Mozzarella, Salami";2
+6;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";2
+7;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";3
+8;Salami;10.50;"Tomatensauce, Mozzarella, Salami";3
+9;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";3
+10;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";4
+11;Salami;10.50;"Tomatensauce, Mozzarella, Salami";4
+12;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";4
+13;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";5
+14;Salami;10.50;"Tomatensauce, Mozzarella, Salami";5
+15;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";5
+16;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";6
+17;Salami;10.50;"Tomatensauce, Mozzarella, Salami";6
+18;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";6
+19;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";7
+20;Salami;10.50;"Tomatensauce, Mozzarella, Salami";7
+21;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";7
