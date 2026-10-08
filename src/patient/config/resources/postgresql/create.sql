@@ -19,62 +19,44 @@
 -- ggf. CHECK(char_length(nachname) <= 255)
 
 -- https://www.postgresql.org/docs/current/manage-ag-tablespaces.html
-SET default_tablespace = patientspace;
+SET default_tablespace = pizzeriaspace;
 
 -- https://www.postgresql.org/docs/current/sql-createtable.html
 -- https://www.postgresql.org/docs/current/datatype.html
 -- https://www.postgresql.org/docs/current/sql-createtype.html
 -- https://www.postgresql.org/docs/current/datatype-enum.html
-CREATE TYPE geschlecht AS ENUM ('MAENNLICH', 'WEIBLICH', 'DIVERS');
-CREATE TYPE familienstand AS ENUM ('LEDIG', 'VERHEIRATET', 'GESCHIEDEN', 'VERWITWET');
-CREATE TYPE facharzt AS ENUM ('CHIRURGIE', 'HALS_NASEN_OHREN', 'KARDIOLOGIE', 'NEUROLOGIE');
+-- https://www.postgresql.org/docs/current/sql-createtable.html
 
-CREATE TABLE IF NOT EXISTS patient (
-    id            INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
-    version       INTEGER NOT NULL DEFAULT 0,
-    nachname      TEXT NOT NULL,
-                  -- impliziter Index als B-Baum durch UNIQUE
-                  -- https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS
-    email         TEXT NOT NULL UNIQUE,
-                  -- https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS
-    kategorie     INTEGER NOT NULL CHECK (kategorie >= 0 AND kategorie <= 9),
-                  -- https://www.postgresql.org/docs/current/datatype-boolean.html
-    has_newsletter BOOLEAN NOT NULL DEFAULT FALSE,
-                  -- https://www.postgresql.org/docs/current/datatype-datetime.html
-    geburtsdatum  DATE CHECK (geburtsdatum < current_date),
-    homepage      TEXT,
-    geschlecht    geschlecht,
-    familienstand familienstand,
-                  -- https://www.postgresql.org/docs/current/datatype-json.html
-                  -- https://www.postgresql.org/docs/current/arrays.html
-                  -- fachaerzte    facharzt[],
-    fachaerzte    JSONB,
-    username      TEXT NOT NULL,
-                  -- https://www.postgresql.org/docs/current/datatype-datetime.html
-    erzeugt       TIMESTAMP NOT NULL,
-    aktualisiert  TIMESTAMP NOT NULL
+CREATE TABLE IF NOT EXISTS pizzeria (
+    id              INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
+    name            TEXT NOT NULL,
+    telefon         TEXT,
+    email           TEXT UNIQUE
 );
 
--- default: btree
-CREATE INDEX IF NOT EXISTS patient_nachname_idx ON patient(nachname);
 
 CREATE TABLE IF NOT EXISTS adresse (
-    id          INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
-    plz         TEXT NOT NULL CHECK (plz ~ '\d{5}'),
-    ort         TEXT NOT NULL,
-    patient_id  INTEGER NOT NULL REFERENCES patient ON DELETE CASCADE
+    id              INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
+    strasse         TEXT NOT NULL,
+    hausnummer      TEXT NOT NULL,
+    plz             TEXT NOT NULL CHECK (plz ~ '^[0-9]{5}$'),
+    ort             TEXT NOT NULL,
+    -- UNIQUE: 1:1-Beziehung
+    pizzeria_id     INTEGER NOT NULL UNIQUE REFERENCES pizzeria ON DELETE CASCADE
 );
 
-CREATE INDEX IF NOT EXISTS adresse_patient_id_idx ON adresse(patient_id);
-CREATE INDEX IF NOT EXISTS adresse_plz_idx ON adresse(plz);
 
-CREATE TABLE IF NOT EXISTS rechnung (
-    id          INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
-                -- https://www.postgresql.org/docs/current/datatype-numeric.html#DATATYPE-NUMERIC-DECIMAL
-                -- https://www.postgresql.org/docs/current/datatype-money.html
-                -- 10 Stellen, davon 2 Nachkommastellen
-    betrag      NUMERIC(10,2) NOT NULL,
-    waehrung    TEXT NOT NULL CHECK (waehrung ~ '[A-Z]{3}'),
-    patient_id  INTEGER NOT NULL REFERENCES patient ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS pizza (
+    id              INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
+    name            TEXT NOT NULL,
+    beschreibung    TEXT,
+    -- https://www.postgresql.org/docs/current/datatype-numeric.html
+    preis           NUMERIC(10,2) NOT NULL CHECK (preis > 0),
+    vegetarisch     BOOLEAN NOT NULL DEFAULT FALSE,
+    -- 1:N-Beziehung
+    pizzeria_id     INTEGER NOT NULL REFERENCES pizzeria ON DELETE CASCADE
 );
-CREATE INDEX IF NOT EXISTS rechnung_patient_id_idx ON rechnung(patient_id);
+
+
+-- default: btree
+CREATE INDEX IF NOT EXISTS pizza_pizzeria_id_idx ON pizza(pizzeria_id);
