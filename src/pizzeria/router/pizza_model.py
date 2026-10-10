@@ -20,7 +20,7 @@ class PizzaModel(BaseModel):
     """Beschreibung der Pizza."""
 
     preis: Decimal = Field(
-        gt=0,
+        gt=Decimal("0"),
         max_digits=10,
         decimal_places=2,
         strict=False,
