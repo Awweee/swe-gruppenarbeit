@@ -1,11 +1,17 @@
+"""Filter für die Pizzeriasuche."""
+
 from dataclasses import dataclass
 
-__all__ = ["Suchparameter"]
+__all__ = ["PizzeriaSuchparameter"]
 
-@dataclass
-class Suchparameter:
-   name: str | None
-   email: str | None
-   def is_empty(self) -> bool:
-        """Prüft, ob alle Suchparameter None sind."""
-        return self.name is None and self.email is None
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class PizzeriaSuchparameter:
+    """Suchparameter für die Pizzeriasuche."""
+
+    name: str | None = None
+    """Teil des Namens als Suchparameter."""
+
+    def is_empty(self) -> bool:
+        """Prüft, ob kein Suchparameter gesetzt ist."""
+        return self.name is None
