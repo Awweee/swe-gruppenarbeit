@@ -1,34 +1,37 @@
-from dataclasses import dataclass
+"""DTO-Klasse für die Adresse, insbesondere ohne Decorators für SQLAlchemy."""
 
-import strawberry
+from dataclasses import dataclass
+from typing import Self
 
 from pizzeria.entity.adresse import Adresse
+from pizzeria.service.exceptions import AdresseRequiredError
+
+__all__ = ["AdresseDTO"]
 
 
 @dataclass(eq=False, slots=True, kw_only=True)
-@strawberry.type(name="Adresse")
 class AdresseDTO:
-    """DTO-Klasse für die Adresse, insbesondere ohne Decorators für SQLAlchemy."""
+    """DTO-Klasse für Adressdaten."""
 
     plz: str
-    ort: str
-    strasse: str
-    hausnummer: str
+    """Postleitzahl."""
 
+    ort: str
+    """Ort."""
 
     @classmethod
-    def from_adresse(cls, adresse: Adresse | None) -> AdresseDTO:
-        """Initialisierung von AdresseDTO durch ein Entity-Objekt von Adresse.
+    def from_adresse(cls, adresse: Adresse | None) -> Self:
+        """Initialisierung von AdresseDTO durch ein Entity-Objekt.
 
-        :param adresse: Adresse-Objekt mit Decorators für SQLAlchemy
-        :return: AdresseDTO-Objekt mit Daten aus dem Adresse-Objekt
+        :param adresse: Adresse-Objekt von SQLAlchemy
+        :return: AdresseDTO mit den Adressdaten
         :rtype: AdresseDTO
-        :raises AdresseRequiredError: falls adresse None ist
+        :raises AdresseRequiredError: Falls die Adresse None ist
         """
+        if adresse is None:
+            raise AdresseRequiredError
 
         return cls(
             plz=adresse.plz,
             ort=adresse.ort,
-            strasse=adresse.strasse,
-            hausnummer=adresse.hausnummer,
         )
