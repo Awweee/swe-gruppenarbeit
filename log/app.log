@@ -162,3 +162,35 @@
 2026-10-15 21:16:32.600 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
 2026-10-15 21:16:32.601 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
 2026-10-15 21:16:40.796 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 22:14:02.235 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 22:14:02.236 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 22:14:02.236 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 22:14:02.237 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 22:14:02.237 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 22:14:02.237 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 22:14:02.243 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 22:14:02.243 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 22:14:02.244 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 22:14:02.251 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 22:14:02.254 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 22:14:02.255 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 22:14:03.931 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 22:14:03.932 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 22:14:05.787 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=b67414d3-1a00-40d4-919e-c6d5acbc0eb2 für 'python-client'
+2026-10-15 22:14:05.819 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '5693e06a-b265-4e0a-845a-df7df0d208bd', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'b67414d3-1a00-40d4-919e-c6d5acbc0eb2'}
+2026-10-15 22:16:21.763 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 22:16:21.764 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 22:16:21.764 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 22:16:21.765 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 22:16:21.765 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 22:16:21.766 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 22:16:21.770 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 22:16:21.770 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 22:16:21.771 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 22:16:21.777 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 22:16:21.780 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 22:16:21.780 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 22:16:25.071 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 22:16:25.071 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 22:16:25.412 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=b67414d3-1a00-40d4-919e-c6d5acbc0eb2 für 'python-client'
+2026-10-15 22:16:25.423 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '5693e06a-b265-4e0a-845a-df7df0d208bd', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'b67414d3-1a00-40d4-919e-c6d5acbc0eb2'}

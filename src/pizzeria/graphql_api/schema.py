@@ -37,7 +37,7 @@ from pizzeria.graphql_api.graphql_types import (
     Suchparameter,
 )
 from pizzeria.repository import Pageable, repository, suchparameter
-from pizzeria.router.pizzeria_model import pizzeriaModel
+from pizzeria.router.pizzeria_model import PizzeriaModel
 from pizzeria.security import Role, TokenService, UserService
 from pizzeria.service import (
     NotFoundError,
@@ -162,7 +162,7 @@ class Mutation:
         logger.debug("pizzeria_input={}", pizzeria_input)
 
         # Dictonary mit Pydantic validieren
-        pizzeria_model: Final = pizzeriaModel.model_validate(asdict(pizzeria_input))
+        pizzeria_model: Final = PizzeriaModel.model_validate(asdict(pizzeria_input))
 
         pizzeria_dto: Final = _write_service.create(pizzeria=pizzeria_model.to_pizzeria())
         payload: Final = CreatePayload(id=pizzeria_dto.id)
