@@ -10,3 +10,155 @@
 2026-10-15 14:29:36.914 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
 2026-10-15 14:29:36.925 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
 2026-10-15 14:29:36.925 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:01:58.455 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:01:58.456 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:01:58.456 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:01:58.456 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:01:58.457 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:01:58.457 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:01:58.464 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:01:58.464 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:01:58.465 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:01:58.472 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:01:58.474 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:01:58.475 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:04:46.592 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:04:46.593 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:04:46.593 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:04:46.593 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:04:46.593 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:04:46.594 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:04:46.598 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:04:46.599 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:04:46.599 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:04:46.607 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:04:46.609 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:04:46.609 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:06:49.656 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:06:49.656 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:06:49.656 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:06:49.657 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:06:49.657 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:06:49.658 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:06:49.662 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:06:49.662 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:06:49.662 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:06:49.670 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:06:49.672 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:06:49.672 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:07:32.684 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:07:32.685 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:07:32.685 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:07:32.685 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:07:32.686 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:07:32.686 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:07:32.692 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:07:32.692 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:07:32.693 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:07:32.700 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:07:32.702 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:07:32.702 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:10:23.793 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:10:23.794 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:10:23.794 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:10:23.794 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:10:23.794 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:10:23.795 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:10:23.800 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:10:23.801 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:10:23.801 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:10:23.808 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:10:23.810 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:10:23.810 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:10:25.702 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:10:25.702 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:12:34.553 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:12:34.553 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:12:34.553 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:12:34.553 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:12:34.554 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:12:34.554 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:12:34.558 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:12:34.558 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:12:34.559 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:12:34.567 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:12:34.570 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:12:34.570 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:12:36.127 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:12:36.127 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:12:45.149 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 21:13:45.665 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:13:45.666 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:13:45.666 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:13:45.666 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:13:45.666 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:13:45.666 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:13:45.671 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:13:45.671 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:13:45.671 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:13:45.678 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:13:45.680 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:13:45.680 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:13:47.165 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:13:47.166 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:13:55.350 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 21:14:08.964 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:14:08.965 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:14:08.965 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:14:08.965 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:14:08.965 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:14:08.966 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:14:08.970 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:14:08.970 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:14:08.970 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:14:08.978 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:14:08.980 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:14:08.981 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:14:10.494 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:14:10.495 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:14:18.681 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 21:15:25.348 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:15:25.348 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:15:25.349 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:15:25.349 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:15:25.349 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:15:25.349 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:15:25.355 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:15:25.355 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:15:25.355 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:15:25.365 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:15:25.368 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:15:25.368 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:15:26.936 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:15:26.937 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:15:35.123 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 21:16:02.312 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:16:02.313 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:16:02.313 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:16:02.313 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:16:02.314 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:16:02.314 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:16:02.319 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:16:02.319 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:16:02.319 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:16:02.327 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:16:02.330 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:16:02.330 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:16:03.815 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:16:03.815 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:16:11.997 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-15 21:16:31.092 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 21:16:31.092 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 21:16:31.092 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 21:16:31.093 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 21:16:31.093 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 21:16:31.093 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 21:16:31.098 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 21:16:31.099 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 21:16:31.099 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 21:16:31.106 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 21:16:31.109 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 21:16:31.109 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt
+2026-10-15 21:16:32.600 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-15 21:16:32.601 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-15 21:16:40.796 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?

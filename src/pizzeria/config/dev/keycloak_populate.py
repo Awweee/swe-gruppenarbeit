@@ -40,7 +40,7 @@ class KeycloakPopulateService:
     """Service für das Neuladen von Keycloak im Modus DEV."""
 
     def __init__(self, user_service: UserService) -> None:
-        """Konstruktor mit abhängigem pizzeriaRepository."""
+        """Konstruktor mit abhängigem repository."""
         self.user_service: UserService = user_service
 
     def populate(self) -> None:
