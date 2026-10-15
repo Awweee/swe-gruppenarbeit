@@ -41,7 +41,7 @@ class Adresse(Base):
     )
     """ID der zugehörigen Pizzeria als eindeutiger Fremdschlüssel."""
 
-    pizzeria: Mapped["Pizzeria"] = relationship(
+    pizzeria: Mapped[Pizzeria] = relationship(
         "Pizzeria",
         back_populates="adresse",
     )

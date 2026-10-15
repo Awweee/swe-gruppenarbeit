@@ -40,6 +40,15 @@ class Pizza(Base):
     )
     """ID der zugehörigen Pizzeria als Fremdschlüssel."""
 
+<<<<<<< HEAD
+=======
+    pizzeria: Mapped[Pizzeria] = relationship(
+        "Pizzeria",
+        back_populates="pizzen",
+    )
+    """Die zugehörige Pizzeria."""
+
+>>>>>>> ce5085d (router pizzeria)
     @override
     def __repr__(self) -> str:
         """Ausgabe der Pizza ohne zusätzliche Datenbankabfragen."""
