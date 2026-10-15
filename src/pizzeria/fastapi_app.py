@@ -30,35 +30,35 @@ from loguru import logger
 from prometheus_fastapi_instrumentator import Instrumentator
 from pyinstrument import Profiler
 
-from patient.banner import banner
-from patient.config import (
+from pizzeria.banner import banner
+from pizzeria.config import (
     dev_db_populate,
     dev_keycloak_populate,
     profiling,
 )
-from patient.config.dev.db_populate import db_populate
-from patient.config.dev.db_populate_router import router as db_populate_router
-from patient.config.dev.keycloak_populate import keycloak_populate
-from patient.config.dev.keycloak_populate_router import (
+from pizzeria.config.dev.db_populate import db_populate
+from pizzeria.config.dev.db_populate_router import router as db_populate_router
+from pizzeria.config.dev.keycloak_populate import keycloak_populate
+from pizzeria.config.dev.keycloak_populate_router import (
     router as keycloak_populate_router,
 )
-from patient.graphql_api import graphql_router
-from patient.problem_details import ProblemDetails
-from patient.repository.session_factory import engine
-from patient.router import (
+from pizzeria.graphql_api import graphql_router
+from pizzeria.problem_details import ProblemDetails
+from pizzeria.repository.session_factory import engine
+from pizzeria.router import (
     health_router,
     hello_router,
-    patient_router,
-    patient_write_router,
+    router,
+    pizzeria_write_router,
     shutdown_router,
 )
-from patient.security import (
+from pizzeria.security import (
     AuthorizationError,
     LoginError,
     router as auth_router,
     set_response_headers,
 )
-from patient.service import (
+from pizzeria.service import (
     EmailExistsError,
     ForbiddenError,
     NotFoundError,
@@ -154,8 +154,8 @@ async def log_response_time(
 # --------------------------------------------------------------------------------------
 # R E S T
 # --------------------------------------------------------------------------------------
-app.include_router(patient_router, prefix="/rest")
-app.include_router(patient_write_router, prefix="/rest")
+app.include_router(router, prefix="/rest")
+app.include_router(pizzeria_write_router, prefix="/rest")
 app.include_router(auth_router, prefix="/auth")
 app.include_router(health_router, prefix="/health")
 app.include_router(shutdown_router, prefix="/admin")
@@ -206,7 +206,7 @@ def favicon() -> FileResponse:
     """
     src_path: Final = Path("src")
     file_name: Final = "favicon.ico"
-    favicon_path: Final = Path("patient") / "static" / file_name
+    favicon_path: Final = Path("pizzeria") / "static" / file_name
     file_path: Final = src_path / favicon_path if src_path.is_dir() else favicon_path
     logger.debug("file_path={}", file_path)
     return FileResponse(
@@ -274,7 +274,7 @@ def login_error_handler(_request: Request, err: LoginError) -> Response:
 def email_exists_error_handler(_request: Request, err: EmailExistsError) -> Response:
     """Exception-Handling für EmailExistsError.
 
-    :param err: Exception, falls die Emailadresse des neuen oder zu ändernden Patienten
+    :param err: Exception, falls die Emailadresse des neuen oder zu ändernden pizzeriaen
         bereits existiert
     :return: Response mit Statuscode 422
     :rtype: Response
@@ -292,7 +292,7 @@ def username_exists_error_handler(
 ) -> Response:
     """Exception-Handling für UsernameExistsError.
 
-    :param err: Exception, falls der Username für den neuen Patienten bereits existiert
+    :param err: Exception, falls der Username für den neuen pizzeriaen bereits existiert
     :return: Response mit Statuscode 422
     :rtype: Response
     """

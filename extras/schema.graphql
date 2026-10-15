@@ -22,18 +22,18 @@ schema {
   mutation: Mutation
 }
 
-"Suche nach Patientendaten"
+"Suche nach pizzeriaendaten"
 type Query {
-  "Suche Patientendaten anhand der ID"
-  patient(patientId: ID!): Patient
+  "Suche pizzeriaendaten anhand der ID"
+  pizzeria(pizzeriaId: ID!): pizzeria
 
-  "Suche Patientendaten anhand des Nachnamens oder der Emailadresse"
-  patienten(suchparameter: Suchparameter): [Patient!]!
+  "Suche pizzeriaendaten anhand des Nachnamens oder der Emailadresse"
+  pizzeriaen(suchparameter: Suchparameter): [pizzeria!]!
 }
 
 type Mutation {
-  "Einen neuen Patientendatensatz anlegen"
-  create(patientInput: PatientInput!): CreatePayload!
+  "Einen neuen pizzeriaendatensatz anlegen"
+  create(pizzeriaInput: pizzeriaInput!): CreatePayload!
 
   "Token zu Benutzername und Passwort anfordern"
   login(username: String!, password: String!): LoginResult!
@@ -44,8 +44,8 @@ type Mutation {
 # https://www.graphql-scalars.dev/docs/scalars/local-date
 # https://www.graphql-scalars.dev/docs/scalars/currency
 # enum als String, damit toSting() vom Enum-Wert aufgerufen wird
-"Eigenschaften eines Patient-Datensatzes mit untergeordneten Eigenschaften"
-type Patient {
+"Eigenschaften eines pizzeria-Datensatzes mit untergeordneten Eigenschaften"
+type pizzeria {
   id: ID!
   version: Int!
   nachname: String!
@@ -67,13 +67,13 @@ type Adresse {
 }
 
 # https://spec.graphql.org/draft/#sec-Input-Objects
-"Suchparameter für die Query 'patienten'"
+"Suchparameter für die Query 'pizzeriaen'"
 input Suchparameter {
   nachname: String = null
   email: String = null
 }
 
-input PatientInput {
+input pizzeriaInput {
   nachname: String!
   email: String!
   kategorie: Int!

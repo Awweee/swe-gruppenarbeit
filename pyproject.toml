@@ -1,7 +1,7 @@
-# Aufruf:   uv run patient
-#               uv run python -m patient
-#               uv run fastapi dev src/patient
-#               uv run uvicorn src.patient:app --http zttp --http2 --ssl-certfile=src\patient\config\resources\tls\certificate.crt --ssl-keyfile=src\patient\config\resources\tls\key.pem
+# Aufruf:   uv run pizzeria
+#               uv run python -m pizzeria
+#               uv run fastapi dev src/pizzeria
+#               uv run uvicorn src.pizzeria:app --http zttp --http2 --ssl-certfile=src\pizzeria\config\resources\tls\certificate.crt --ssl-keyfile=src\pizzeria\config\resources\tls\key.pem
 #
 #           curl -v --http2 --insecure `
 #               --oauth2-bearer <access_token> `
@@ -94,6 +94,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP",
 ]
 dependencies = [
+    "loguru>=0.7.3,<1.0.0",
     "starlette>=0.46.0",
     "pydantic>=2.9.0",
     "typing-extensions>=4.8.0",
@@ -180,7 +181,7 @@ all = [
 ]
 
 [project.scripts]
-fastapi = "fastapi.cli:main"
+pizzeria = "pizzeria:main"
 
 [dependency-groups]
 dev = [

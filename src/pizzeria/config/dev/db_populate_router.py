@@ -21,9 +21,9 @@ from fastapi import APIRouter, Depends, Request, Response, status
 from fastapi.responses import JSONResponse
 from loguru import logger
 
-from patient.config.dev.db_populate import DbPopulateService, get_db_populate_service
-from patient.problem_details import ProblemDetails
-from patient.security import Role, RolesRequired, User
+from pizzeria.config.dev.db_populate import DbPopulateService, get_db_populate_service
+from pizzeria.problem_details import ProblemDetails
+from pizzeria.security import Role, RolesRequired, User
 
 __all__ = ["router"]
 

@@ -30,8 +30,8 @@ host-binding = "0.0.0.0"
 
 [db]
 # dialect = "postgresql"
-# username = "patient"
-# name = "patient"
+# username = "pizzeria"
+# name = "pizzeria"
 password = "p"
 password-admin = "p"
 # host = "postgres"
@@ -58,7 +58,7 @@ enabled = true
 client-secret = "PWbnE4YRuKpgdwPQhFtJfprGRXA1V1yKEF7wPTXAWomZ37YFAF0jsEVKHNnIXb9xl9L4vey7W8eG7aLjjQCxua"
 # admin = "admin"
 admin-password = "p"
-#csv = "/csv/patient.csv"
+#csv = "/csv/pizzeria.csv"
 
 [graphql]
 # Locust: auskommentieren

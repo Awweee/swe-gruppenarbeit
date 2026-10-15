@@ -37,8 +37,8 @@ from pyfiglet import Figlet
 from starlette.routing import BaseRoute, Route
 from tabulate import tabulate
 
-from patient.config import db_url
-from patient.repository import engine
+from pizzeria.config import db_url
+from pizzeria.repository import engine
 
 
 # tabulate() hat ein Argument vom Typ "Tuple" und nicht dataclass
@@ -101,7 +101,7 @@ def _routes_to_str(routes: list[BaseRoute]) -> str:
             table_entries.append(table_entry)
 
         elif isinstance(route, fastapi.routing._IncludedRouter):  # ruff: ignore[private-member-access]
-            # Routen durch APIRouter, z.B. /rest/{patient_id}
+            # Routen durch APIRouter, z.B. /rest/{pizzeria_id}
             router: Final = route.original_router
             prefix: Final = route.include_context.prefix
             table_entries_apirouter: Final = _apirouter_to_table_entries(router, prefix)
@@ -117,7 +117,7 @@ def banner(routes: list[BaseRoute]) -> None:
     """Banner für den Start des Servers."""
     figlet: Final = Figlet()
     print()
-    print(figlet.renderText("patient"))
+    print(figlet.renderText("pizzeria"))
 
     rechnername: Final = gethostname()
     # Default Isolation Level "read committed": Schreibsperren und keine Lesesperren

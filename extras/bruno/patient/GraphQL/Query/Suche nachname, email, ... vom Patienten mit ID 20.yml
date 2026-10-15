@@ -1,5 +1,5 @@
 info:
-  name: Suche nachname, email, ... vom Patienten mit ID 20
+  name: Suche nachname, email, ... vom pizzeriaen mit ID 20
   type: graphql
   seq: 1
 
@@ -12,8 +12,8 @@ graphql:
       disabled: true
   body:
     query: |-
-      query ($patientId: ID! = "20") {
-        patient(patientId: $patientId) {
+      query ($pizzeriaId: ID! = "20") {
+        pizzeria(pizzeriaId: $pizzeriaId) {
           id
           version
           nachname
@@ -34,7 +34,7 @@ graphql:
       }
     variables: |-
       {
-        "patientId": "30"
+        "pizzeriaId": "30"
       }
   auth: inherit
 
@@ -46,39 +46,39 @@ runtime:
     - expression: res.headers['content-type']
       operator: eq
       value: application/json
-    - expression: res.body.data.patient
+    - expression: res.body.data.pizzeria
       operator: isJson
-    - expression: res.body.data.patient.version
+    - expression: res.body.data.pizzeria.version
       operator: gte
       value: "0"
-    - expression: res.body.data.patient.nachname
+    - expression: res.body.data.pizzeria.nachname
       operator: isString
-    - expression: res.body.data.patient.nachname
+    - expression: res.body.data.pizzeria.nachname
       operator: isNotEmpty
-    - expression: res.body.data.patient.email
+    - expression: res.body.data.pizzeria.email
       operator: isString
-    - expression: res.body.data.patient.email
+    - expression: res.body.data.pizzeria.email
       operator: isNotEmpty
-    - expression: res.body.data.patient.kategorie
+    - expression: res.body.data.pizzeria.kategorie
       operator: gt
       value: "0"
-    - expression: res.body.data.patient.hasNewsletter
+    - expression: res.body.data.pizzeria.hasNewsletter
       operator: isBoolean
-    - expression: res.body.data.patient.geburtsdatum
+    - expression: res.body.data.pizzeria.geburtsdatum
       operator: isString
-    - expression: res.body.data.patient.homepage
+    - expression: res.body.data.pizzeria.homepage
       operator: isString
-    - expression: res.body.data.patient.geschlecht
+    - expression: res.body.data.pizzeria.geschlecht
       operator: isString
-    - expression: res.body.data.patient.familienstand
+    - expression: res.body.data.pizzeria.familienstand
       operator: isString
-    - expression: res.body.data.patient.adresse
+    - expression: res.body.data.pizzeria.adresse
       operator: isJson
-    - expression: res.body.data.patient.fachaerzte
+    - expression: res.body.data.pizzeria.fachaerzte
       operator: isArray
-    - expression: res.body.data.patient.username
+    - expression: res.body.data.pizzeria.username
       operator: isString
-    - expression: res.body.data.patient.username
+    - expression: res.body.data.pizzeria.username
       operator: isNotEmpty
 
 settings:

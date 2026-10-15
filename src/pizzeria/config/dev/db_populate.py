@@ -25,15 +25,15 @@ lazy from importlib.resources.abc import Traversable
 from loguru import logger
 from sqlalchemy import Connection, create_engine, text
 
-from patient.config.config import resources_path
-from patient.config.db import (
+from pizzeria.config.config import resources_path
+from pizzeria.config.db import (
     db_connect_args,
     db_dialect,
     db_log_statements,
     db_url_admin,
 )
-from patient.config.dev_modus import dev_db_populate
-from patient.repository import engine
+from pizzeria.config.dev_modus import dev_db_populate
+from pizzeria.repository import engine
 
 __all__ = ["DbPopulateService", "db_populate", "get_db_populate_service"]
 
@@ -110,11 +110,11 @@ class DbPopulateService:
 
     def _load_csv_files(self) -> None:
         logger.debug("begin")
-        tabellen: Final = ["patient", "adresse", "rechnung"]
-        csv_path: Final = "/init/patient/csv"
+        tabellen: Final = ["pizzeria", "adresse", "rechnung"]
+        csv_path: Final = "/init/pizzeria/csv"
         # siehe extras/compose/postgres/compose.init.yml
         with self.engine_admin.connect() as connection:
-            connection.execute(text("SET search_path TO patient;"))
+            connection.execute(text("SET search_path TO pizzeria;"))
             for tabelle in tabellen:
                 self._load_csv_file(
                     tabelle=tabelle,

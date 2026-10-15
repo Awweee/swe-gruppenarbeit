@@ -1,8 +1,8 @@
-id;name;email;eroeffnungsdatum
-1;Pizzeria Bella Italia;info@bellaitalia.de;2020-05-15
-2;Pizzeria Napoli;info@pizzeria-napoli.de;2018-03-22
-3;La Dolce Vita;kontakt@ladolcevita.de;2021-07-01
-4;Pizzeria Roma;info@pizzeria-roma.de;2019-11-10
-5;Mamma Mia Pizzeria;info@mammamia-pizzeria.de;2022-01-18
-6;Trattoria Sicilia;kontakt@trattoria-sicilia.de;2017-09-05
-7;Pizzeria Venezia;info@pizzeria-venezia.de;2023-04-12
+id;name;telefon;email
+1;Pizzeria Bella Italia;+49 30 12345678;info@bellaitalia.de
+2;Pizzeria Napoli;+49 89 23456789;info@pizzeria-napoli.de
+3;La Dolce Vita;+49 221 34567890;kontakt@ladolcevita.de
+4;Pizzeria Roma;+49 40 45678901;info@pizzeria-roma.de
+5;Mamma Mia Pizzeria;+49 711 56789012;info@mammamia-pizzeria.de
+6;Trattoria Sicilia;+49 351 67890123;kontakt@trattoria-sicilia.de
+7;Pizzeria Venezia;+49 69 78901234;info@pizzeria-venezia.de

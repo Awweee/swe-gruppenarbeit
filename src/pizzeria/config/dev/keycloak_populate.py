@@ -23,11 +23,11 @@ from fastapi import Depends
 from keycloak import KeycloakConnectionError
 from loguru import logger
 
-from patient.config import csv_config
-from patient.config.dev_modus import dev_keycloak_populate
-from patient.security import User, UserService
-from patient.security.dependencies import get_user_service
-from patient.security.role import Role
+from pizzeria.config import csv_config
+from pizzeria.config.dev_modus import dev_keycloak_populate
+from pizzeria.security import User, UserService
+from pizzeria.security.dependencies import get_user_service
+from pizzeria.security.role import Role
 
 __all__ = [
     "KeycloakPopulateService",
@@ -40,7 +40,7 @@ class KeycloakPopulateService:
     """Service für das Neuladen von Keycloak im Modus DEV."""
 
     def __init__(self, user_service: UserService) -> None:
-        """Konstruktor mit abhängigem PatientRepository."""
+        """Konstruktor mit abhängigem pizzeriaRepository."""
         self.user_service: UserService = user_service
 
     def populate(self) -> None:
@@ -87,11 +87,11 @@ class KeycloakPopulateService:
                     email=email,
                     nachname=nachname,
                     vorname=nachname,
-                    roles=[Role.PATIENT],
+                    roles=[Role.pizzeria],
                     password="p",  # ruff: ignore[hardcoded-password-func-arg] # NOSONAR
                 )
                 self.user_service.create_user(user=user)
-        logger.debug("Alle User zu 'patient.csv' neu angelegt")
+        logger.debug("Alle User zu 'pizzeria.csv' neu angelegt")
 
 
 def get_keycloak_populate_service(

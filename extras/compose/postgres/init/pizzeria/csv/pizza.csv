@@ -1,22 +1,22 @@
-id;name;kosten;zutaten;pizzeria_id
-1;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";1
-2;Salami;10.50;"Tomatensauce, Mozzarella, Salami";1
-3;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";1
-4;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";2
-5;Salami;10.50;"Tomatensauce, Mozzarella, Salami";2
-6;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";2
-7;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";3
-8;Salami;10.50;"Tomatensauce, Mozzarella, Salami";3
-9;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";3
-10;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";4
-11;Salami;10.50;"Tomatensauce, Mozzarella, Salami";4
-12;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";4
-13;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";5
-14;Salami;10.50;"Tomatensauce, Mozzarella, Salami";5
-15;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";5
-16;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";6
-17;Salami;10.50;"Tomatensauce, Mozzarella, Salami";6
-18;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";6
-19;Margherita;8.50;"Tomatensauce, Mozzarella, Basilikum";7
-20;Salami;10.50;"Tomatensauce, Mozzarella, Salami";7
-21;Funghi;9.50;"Tomatensauce, Mozzarella, Champignons";7
+id;name;beschreibung;preis;vegetarisch;pizzeria_id
+1;Margherita;Tomatensauce, Mozzarella und Basilikum;8.50;true;1
+2;Salami;Tomatensauce, Mozzarella und Salami;10.50;false;1
+3;Funghi;Tomatensauce, Mozzarella und Champignons;9.50;true;1
+4;Prosciutto;Tomatensauce, Mozzarella und Schinken;11.00;false;2
+5;Quattro Formaggi;Mozzarella, Gorgonzola, Parmesan und Gouda;12.50;true;2
+6;Diavola;Tomatensauce, Mozzarella, scharfe Salami und Chili;12.00;false;2
+7;Margherita;Tomatensauce, Mozzarella und Basilikum;8.50;true;3
+8;Salami;Tomatensauce, Mozzarella und Salami;10.50;false;3
+9;Funghi;Tomatensauce, Mozzarella und Champignons;9.50;true;3
+10;Prosciutto;Tomatensauce, Mozzarella und Schinken;11.00;false;4
+11;Quattro Formaggi;Mozzarella, Gorgonzola, Parmesan und Gouda;12.50;true;4
+12;Diavola;Tomatensauce, Mozzarella, scharfe Salami und Chili;12.00;false;4
+13;Margherita;Tomatensauce, Mozzarella und Basilikum;8.50;true;5
+14;Salami;Tomatensauce, Mozzarella und Salami;10.50;false;5
+15;Funghi;Tomatensauce, Mozzarella und Champignons;9.50;true;5
+16;Prosciutto;Tomatensauce, Mozzarella und Schinken;11.00;false;6
+17;Quattro Formaggi;Mozzarella, Gorgonzola, Parmesan und Gouda;12.50;true;6
+18;Diavola;Tomatensauce, Mozzarella, scharfe Salami und Chili;12.00;false;6
+19;Margherita;Tomatensauce, Mozzarella und Basilikum;8.50;true;7
+20;Salami;Tomatensauce, Mozzarella und Salami;10.50;false;7
+21;Vegetaria;Tomatensauce, Mozzarella, Paprika und Zucchini;11.50;true;7

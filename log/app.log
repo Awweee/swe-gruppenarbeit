@@ -1,0 +1,12 @@
+2026-10-15 14:29:36.875 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-15 14:29:36.875 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\app.toml
+2026-10-15 14:29:36.875 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-15 14:29:36.876 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-15 14:29:36.876 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-15 14:29:36.877 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'require', 'sslrootcert': 'C:\\Users\\Grigo\\VSProjects\\pizzeria\\src\\pizzeria\\config\\resources\\postgresql\\server.crt'}
+2026-10-15 14:29:36.898 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-15 14:29:36.899 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-15 14:29:36.899 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-15 14:29:36.914 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-15 14:29:36.925 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\key.pem
+2026-10-15 14:29:36.925 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: C:\Users\Grigo\VSProjects\pizzeria\src\pizzeria\config\resources\tls\certificate.crt

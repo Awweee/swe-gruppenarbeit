@@ -11,7 +11,7 @@ from pizzeria.entity.base import Base
 if TYPE_CHECKING:
     from pizzeria.entity.pizzeria import Pizzeria
 
-
+#id;name;kosten;zutaten;pizzeria_id
 class Pizza(Base):
     """Entity-Klasse für eine Pizza."""
 
@@ -26,26 +26,19 @@ class Pizza(Base):
     name: Mapped[str]
     """Der Name der Pizza."""
 
-    beschreibung: Mapped[str | None]
+    beschreibung: Mapped[str | None] = mapped_column(nullable=True)
     """Die optionale Beschreibung der Pizza."""
 
     preis: Mapped[Decimal] = mapped_column(Numeric(10, 2))
     """Der Preis der Pizza."""
 
-    vegetarisch: Mapped[bool] = mapped_column(default=False)
-    """Kennzeichen für vegetarische Pizzen."""
+    vegetarisch: Mapped[bool] = mapped_column(nullable=False)
 
     pizzeria_id: Mapped[int] = mapped_column(
         ForeignKey("pizzeria.id", ondelete="CASCADE"),
         nullable=False,
     )
     """ID der zugehörigen Pizzeria als Fremdschlüssel."""
-
-    pizzeria: Mapped["Pizzeria"] = relationship(
-        "Pizzeria",
-        back_populates="pizzen",
-    )
-    """Die zugehörige Pizzeria."""
 
     @override
     def __repr__(self) -> str:

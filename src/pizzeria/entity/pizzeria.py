@@ -5,13 +5,14 @@ from typing import TYPE_CHECKING, override
 from sqlalchemy import Identity
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from pizzeria.entity import pizza
 from pizzeria.entity.base import Base
 
 if TYPE_CHECKING:
     from pizzeria.entity.adresse import Adresse
     from pizzeria.entity.pizza import Pizza
 
-
+#id;name;email;eroeffnungsdatum
 class Pizzeria(Base):
     """Entity-Klasse für Pizzeriadaten."""
 
@@ -23,17 +24,16 @@ class Pizzeria(Base):
     )
     """Die generierte ID."""
 
+    telefon: Mapped[str | None] = mapped_column(nullable=True)
+
     name: Mapped[str]
     """Der Name der Pizzeria."""
-
-    telefon: Mapped[str | None]
-    """Die optionale Telefonnummer."""
 
     email: Mapped[str | None] = mapped_column(unique=True)
     """Die optionale eindeutige E-Mail-Adresse."""
 
     # https://docs.sqlalchemy.org/en/20/orm/basic_relationships.html#one-to-one
-    adresse: Mapped["Adresse | None"] = relationship(
+    adresse: Mapped[Adresse | None] = relationship(
         "Adresse",
         back_populates="pizzeria",
         uselist=False,
@@ -42,7 +42,7 @@ class Pizzeria(Base):
     """Die in einer 1:1-Beziehung referenzierte Adresse."""
 
     # https://docs.sqlalchemy.org/en/20/orm/basic_relationships.html#one-to-many
-    pizzen: Mapped[list["Pizza"]] = relationship(
+    pizzen: Mapped[list[Pizza]] = relationship(
         "Pizza",
         back_populates="pizzeria",
         cascade="save-update, delete",
