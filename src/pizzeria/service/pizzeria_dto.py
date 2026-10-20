@@ -1,7 +1,11 @@
 
+from dataclasses import dataclass
+
+import strawberry
 from pizzeria.entity.pizzeria import Pizzeria
 
-
+@dataclass(eq=False, slots=True, kw_only=True)
+@strawberry.type(name="pizzeria")
 class PizzeriaDTO:
     """Data Transfer Object für Pizzerien."""
 

@@ -10,4 +10,5 @@ __all__: Sequence[str] = [
     "AdresseModel",
     "PizzaModel",
     "PizzeriaModel",
+    "pizzeria_router",
 ]

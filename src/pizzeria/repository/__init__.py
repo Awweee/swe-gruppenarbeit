@@ -4,7 +4,7 @@ from pizzeria.repository.pageable import (
     MAX_PAGE_SIZE,
     Pageable,
 )
-from pizzeria.repository.repository import Repository
+from pizzeria.repository.repository import repository
 from pizzeria.repository.suchparameter import Suchparameter
 from pizzeria.repository.session_factory import Session, engine
 from pizzeria.repository.slice import Slice

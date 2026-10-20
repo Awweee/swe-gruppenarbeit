@@ -21,7 +21,7 @@ from fastapi import Depends
 
 from pizzeria.repository.repository import repository
 from pizzeria.security.dependencies import get_user_service
-from pizzeria.service.service import pizzeriaService
+from pizzeria.service.service import Service
 from pizzeria.service.pizzeria_write_service import pizzeriaWriteService
 lazy from pizzeria.security.user_service import UserService
 
@@ -37,9 +37,9 @@ def get_repository() -> repository:
 
 def get_service(
     repo: Annotated[repository, Depends(get_repository)],
-) -> pizzeriaService:
-    """Factory-Funktion für pizzeriaService."""
-    return pizzeriaService(repo=repo)
+) -> Service:
+    """Factory-Funktion für service."""
+    return Service(repo=repo)
 
 
 def get_write_service(

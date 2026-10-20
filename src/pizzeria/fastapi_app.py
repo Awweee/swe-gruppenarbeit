@@ -34,7 +34,6 @@ from pizzeria.banner import banner
 from pizzeria.config import (
     dev_db_populate,
     dev_keycloak_populate,
-    profiling,
 )
 from pizzeria.config.dev.db_populate import db_populate
 from pizzeria.config.dev.db_populate_router import router as db_populate_router
@@ -45,13 +44,7 @@ from pizzeria.config.dev.keycloak_populate_router import (
 from pizzeria.graphql_api import graphql_router
 from pizzeria.problem_details import ProblemDetails
 from pizzeria.repository.session_factory import engine
-from pizzeria.router import (
-    health_router,
-    hello_router,
-    router,
-    pizzeria_write_router,
-    shutdown_router,
-)
+from pizzeria.router.router import pizzeria_router
 from pizzeria.security import (
     AuthorizationError,
     LoginError,
@@ -59,11 +52,8 @@ from pizzeria.security import (
     set_response_headers,
 )
 from pizzeria.service import (
-    EmailExistsError,
     ForbiddenError,
     NotFoundError,
-    UsernameExistsError,
-    VersionOutdatedError,
 )
 
 __all__ = [
@@ -109,23 +99,23 @@ Instrumentator().instrument(app).expose(app)
 app.add_middleware(GZipMiddleware, minimum_size=500)
 
 
-if profiling:
+# if profiling:
 
-    @app.middleware("http")
-    async def profile_request(
-        request: Request, call_next: Callable[[Request], Awaitable[Response]]
-    ) -> HTMLResponse | Response:
-        profiling = request.query_params.get("profile", False)
-        if profiling:
-            logger.warning("Profiling aktiviert")
-            profiler = Profiler()
-            profiler.start()
-            response = await call_next(request)
-            profiler.stop()
-            print(profiler.output_text(unicode=True, color=True))
-            # return HTMLResponse(profiler.output_html())
-            return response
-        return await call_next(request)
+#     @app.middleware("http")
+#     async def profile_request(
+#         request: Request, call_next: Callable[[Request], Awaitable[Response]]
+#     ) -> HTMLResponse | Response:
+#         profiling = request.query_params.get("profile", False)
+#         if profiling:
+#             logger.warning("Profiling aktiviert")
+#             profiler = Profiler()
+#             profiler.start()
+#             response = await call_next(request)
+#             profiler.stop()
+#             print(profiler.output_text(unicode=True, color=True))
+#             # return HTMLResponse(profiler.output_html())
+#             return response
+#         return await call_next(request)
 
 
 @app.middleware("http")
@@ -154,13 +144,13 @@ async def log_response_time(
 # --------------------------------------------------------------------------------------
 # R E S T
 # --------------------------------------------------------------------------------------
-app.include_router(router, prefix="/rest")
-app.include_router(pizzeria_write_router, prefix="/rest")
+app.include_router(pizzeria_router, prefix="/rest")
+#app.include_router(pizzeria_write_router, prefix="/rest")
 app.include_router(auth_router, prefix="/auth")
-app.include_router(health_router, prefix="/health")
+'''app.include_router(health_router, prefix="/health")
 app.include_router(shutdown_router, prefix="/admin")
 app.include_router(hello_router, prefix="/hello")
-
+'''
 if dev_db_populate:
     app.include_router(db_populate_router, prefix="/dev")
 if dev_keycloak_populate:
@@ -270,50 +260,50 @@ def login_error_handler(_request: Request, err: LoginError) -> Response:
     ).to_response()
 
 
-@app.exception_handler(EmailExistsError)
-def email_exists_error_handler(_request: Request, err: EmailExistsError) -> Response:
-    """Exception-Handling für EmailExistsError.
+# @app.exception_handler(EmailExistsError)
+# def email_exists_error_handler(_request: Request, err: EmailExistsError) -> Response:
+#     """Exception-Handling für EmailExistsError.
 
-    :param err: Exception, falls die Emailadresse des neuen oder zu ändernden pizzeriaen
-        bereits existiert
-    :return: Response mit Statuscode 422
-    :rtype: Response
-    """
-    return ProblemDetails.create(
-        status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-        detail=str(err),
-    ).to_response()
-
-
-@app.exception_handler(UsernameExistsError)
-def username_exists_error_handler(
-    _request: Request,
-    err: UsernameExistsError,
-) -> Response:
-    """Exception-Handling für UsernameExistsError.
-
-    :param err: Exception, falls der Username für den neuen pizzeriaen bereits existiert
-    :return: Response mit Statuscode 422
-    :rtype: Response
-    """
-    return ProblemDetails.create(
-        status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-        detail=str(err),
-    ).to_response()
+#     :param err: Exception, falls die Emailadresse des neuen oder zu ändernden pizzeriaen
+#         bereits existiert
+#     :return: Response mit Statuscode 422
+#     :rtype: Response
+#     """
+#     return ProblemDetails.create(
+#         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+#         detail=str(err),
+#     ).to_response()
 
 
-@app.exception_handler(VersionOutdatedError)
-def version_outdated_error_handler(
-    _request: Request,
-    err: VersionOutdatedError,
-) -> Response:
-    """Exception-Handling für VersionOutdatedError.
+# @app.exception_handler(UsernameExistsError)
+# def username_exists_error_handler(
+#     _request: Request,
+#     err: UsernameExistsError,
+# ) -> Response:
+#     """Exception-Handling für UsernameExistsError.
 
-    :param _err: Exception, falls die Versionsnummer zum Aktualisieren veraltet ist
-    :return: Response mit Statuscode 412
-    :rtype: Response
-    """
-    return ProblemDetails.create(
-        status_code=status.HTTP_412_PRECONDITION_FAILED,
-        detail=str(err),
-    ).to_response()
+#     :param err: Exception, falls der Username für den neuen pizzeriaen bereits existiert
+#     :return: Response mit Statuscode 422
+#     :rtype: Response
+#     """
+#     return ProblemDetails.create(
+#         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+#         detail=str(err),
+#     ).to_response()
+
+
+# @app.exception_handler(VersionOutdatedError)
+# def version_outdated_error_handler(
+#     _request: Request,
+#     err: VersionOutdatedError,
+# ) -> Response:
+#     """Exception-Handling für VersionOutdatedError.
+
+#     :param _err: Exception, falls die Versionsnummer zum Aktualisieren veraltet ist
+#     :return: Response mit Statuscode 412
+#     :rtype: Response
+#     """
+#     return ProblemDetails.create(
+#         status_code=status.HTTP_412_PRECONDITION_FAILED,
+#         detail=str(err),
+#     ).to_response()

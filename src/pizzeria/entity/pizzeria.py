@@ -49,6 +49,8 @@ class Pizzeria(Base):
     )
     """Die in einer 1:N-Beziehung referenzierten Pizzen."""
 
+    username: Mapped[str | None]
+
     @override
     def __repr__(self) -> str:
         """Ausgabe der Pizzeria ohne zusätzliche Datenbankabfragen."""

@@ -41,10 +41,10 @@ from pizzeria.router.pizzeria_model import PizzeriaModel
 from pizzeria.security import Role, TokenService, UserService
 from pizzeria.service import (
     NotFoundError,
-    pizzeriaDTO,
-    pizzeriaService,
-    pizzeriaWriteService,
+    PizzeriaDTO,
+    Service,
 )
+#from pizzeria.service import pizzeriaWriteService
 
 __all__ = ["graphql_router"]
 
@@ -64,12 +64,12 @@ __all__ = ["graphql_router"]
 
 
 _repo: Final = repository()
-_service: pizzeriaService = pizzeriaService(repo=_repo)
+_service: Service = Service(repo=_repo)
 _user_service: UserService = UserService()
-_write_service: pizzeriaWriteService = pizzeriaWriteService(
-    repo=_repo,
-    user_service=_user_service,
-)
+# _write_service: pizzeriaWriteService = pizzeriaWriteService(
+#     repo=_repo,
+#     user_service=_user_service,
+# )
 _token_service: Final = TokenService()
 
 
@@ -78,7 +78,7 @@ class Query:
     """Queries, um pizzeriaendaten zu lesen."""
 
     @strawberry.field
-    def pizzeria(self, pizzeria_id: strawberry.ID, info: Info) -> pizzeriaDTO | None:
+    def pizzeria(self, pizzeria_id: strawberry.ID, info: Info) -> PizzeriaDTO | None:
         """Daten zu einem pizzeriaen lesen.
 
         :param pizzeria_id: ID des gesuchten pizzeriaen
@@ -108,7 +108,7 @@ class Query:
         self,
         suchparameter: Suchparameter | None,
         info: Info,
-    ) -> Sequence[pizzeriaDTO]:
+    ) -> Sequence[PizzeriaDTO]:
         """pizzeriaen anhand von Suchparameter suchen.
 
         :param suchparameter: nachname, email usw.
@@ -164,11 +164,11 @@ class Mutation:
         # Dictonary mit Pydantic validieren
         pizzeria_model: Final = PizzeriaModel.model_validate(asdict(pizzeria_input))
 
-        pizzeria_dto: Final = _write_service.create(pizzeria=pizzeria_model.to_pizzeria())
-        payload: Final = CreatePayload(id=pizzeria_dto.id)
+        #pizzeria_dto: Final = _write_service.create(pizzeria=pizzeria_model.to_pizzeria())
+        #payload: Final = CreatePayload(id=pizzeria_dto.id)
 
-        logger.debug("{}", payload)
-        return payload
+        #logger.debug("{}", payload)
+        #return payload
 
     # Mutation, weil evtl. der Login-Zeitpunkt gespeichert wird
     @strawberry.mutation

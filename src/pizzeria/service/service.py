@@ -9,7 +9,7 @@ from openpyxl import Workbook
 from pizzeria.entity.pizzeria import Pizzeria
 from pizzeria.repository import (
     Pageable,
-    Repository,
+    repository,
     Suchparameter,
     Session,
     Slice,
@@ -22,7 +22,7 @@ from pizzeria.service.pizzeria_dto import PizzeriaDTO
 class Service:
     """Service-Klasse für die Verwaltung von Pizzerien."""
 
-    def __init__(self, repo:Repository):
+    def __init__(self, repo:repository):
         self.repository = repo
 
     def find_by_id(self, pizzeria_id: int | None, user: User) -> Pizzeria | None:

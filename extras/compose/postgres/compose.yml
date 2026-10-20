@@ -49,6 +49,7 @@ services:
       - pg_tablespace:/tablespace
       - pg_init:/init:ro
       - ./init/pizzeria/csv:/csv:ro
+      - ./init/pizzeria/sql:/sql:ro
       # UNIX-Socket .s.PGSQL.5432.lock
       #- pg_run:/tmp
     # https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables

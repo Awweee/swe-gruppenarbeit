@@ -12,7 +12,7 @@ from pizzeria.repository.pageable import Pageable
 from pizzeria.repository.suchparameter import Suchparameter
 from pizzeria.repository.slice import Slice
 
-class Repository:
+class repository:
     """Basisklasse für Repository-Klassen."""
 
     def find_by_id(self, pizzeria_id: int | None, session: Session) -> Pizzeria | None:

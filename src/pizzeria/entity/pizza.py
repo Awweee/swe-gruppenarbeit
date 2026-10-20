@@ -4,7 +4,7 @@ from decimal import Decimal
 from typing import TYPE_CHECKING, override
 
 from sqlalchemy import ForeignKey, Identity, Numeric
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship, relationship
 
 from pizzeria.entity.base import Base
 
@@ -40,6 +40,12 @@ class Pizza(Base):
     )
     """ID der zugehörigen Pizzeria als Fremdschlüssel."""
 
+    pizzeria: Mapped["Pizzeria"] = relationship(
+        "Pizzeria",
+        back_populates="pizzen",
+    )
+    """Die zugehörige Pizzeria."""
+
     @override
     def __repr__(self) -> str:
         """Ausgabe der Pizza ohne zusätzliche Datenbankabfragen."""
@@ -47,4 +53,3 @@ class Pizza(Base):
             f"Pizza(id={self.id}, name={self.name}, "
             f"preis={self.preis}, vegetarisch={self.vegetarisch})"
         )
-

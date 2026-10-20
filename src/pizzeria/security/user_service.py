@@ -124,6 +124,7 @@ class UserService:
         """
         logger.debug("user={}", user)
 
+        logger.error("keycloak create_user username={!r}", user.username)
         # https://www.keycloak.org/docs-api/latest/rest-api/#_users:
         # POST /admin/realms/{realm}/users
         # https://www.keycloak.org/docs-api/latest/rest-api/index.html#UserRepresentation

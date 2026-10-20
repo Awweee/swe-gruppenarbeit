@@ -68,5 +68,5 @@ graphiql-enabled = true
 debug-level = true
 
 [dev]
-db-populate = true
+db-populate = false
 keycloak-populate = true

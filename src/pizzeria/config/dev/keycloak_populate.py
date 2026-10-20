@@ -76,20 +76,22 @@ class KeycloakPopulateService:
                     kopfzeile = False
                     continue
 
-                username = row[11]
+                username = row[5]
                 if username == "admin":
                     continue
+                logger.debug("keycloak username={!r}", username)
 
-                email = row[3]
-                nachname = row[2]
+                email = row[4]
+                nachname = row[1]
                 user = User(
                     username=username,
                     email=email,
                     nachname=nachname,
                     vorname=nachname,
-                    roles=[Role.pizzeria],
+                    roles=[Role.PIZZERIA],
                     password="p",  # ruff: ignore[hardcoded-password-func-arg] # NOSONAR
                 )
+
                 self.user_service.create_user(user=user)
         logger.debug("Alle User zu 'pizzeria.csv' neu angelegt")
 

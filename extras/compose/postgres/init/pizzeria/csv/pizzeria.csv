@@ -1,8 +1,8 @@
-id;name;telefon;email
-1;Pizzeria Bella Italia;+49 30 12345678;info@bellaitalia.de
-2;Pizzeria Napoli;+49 89 23456789;info@pizzeria-napoli.de
-3;La Dolce Vita;+49 221 34567890;kontakt@ladolcevita.de
-4;Pizzeria Roma;+49 40 45678901;info@pizzeria-roma.de
-5;Mamma Mia Pizzeria;+49 711 56789012;info@mammamia-pizzeria.de
-6;Trattoria Sicilia;+49 351 67890123;kontakt@trattoria-sicilia.de
-7;Pizzeria Venezia;+49 69 78901234;info@pizzeria-venezia.de
+id;version;name;telefon;email;username
+1;0;Admin;;admin@acme.com;admin
+2;0;Pizzeria Napoli;+49 89 23456789;info@pizzeria-napoli.de;pizza-napoli
+3;0;La Dolce Vita;+49 221 34567890;kontakt@ladolcevita.de;la-dolce-vita
+4;0;Pizzeria Roma;+49 40 45678901;info@pizzeria-roma.de;pizzeria-roma
+5;0;Mamma Mia Pizzeria;+49 711 56789012;info@mammamia-pizzeria.de;mamma-mia
+6;0;Trattoria Sicilia;+49 351 67890123;kontakt@trattoria-sicilia.de;trattoria-sicilia
+7;0;Pizzeria Venezia;+49 69 78901234;info@pizzeria-venezia.de;pizzeria-venezia

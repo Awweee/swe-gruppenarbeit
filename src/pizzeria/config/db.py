@@ -75,7 +75,7 @@ def _create_connect_args() -> dict[str, str] | None:
         db_resources_traversable / db_dialect / "server.crt",
     )
     return {
-        "sslmode": "require",  # oder "require" oder "prefer"
+        "sslmode": "prefer",  # oder "require" oder "prefer"
         "sslrootcert": cafile,
     }
 

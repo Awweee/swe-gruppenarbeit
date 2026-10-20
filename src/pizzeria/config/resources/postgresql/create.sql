@@ -29,9 +29,11 @@ SET default_tablespace = pizzeriaspace;
 
 CREATE TABLE IF NOT EXISTS pizzeria (
     id              INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1000) PRIMARY KEY,
+    version         INTEGER NOT NULL DEFAULT 0,
     name            TEXT NOT NULL,
     telefon         TEXT,
-    email           TEXT UNIQUE
+    email           TEXT UNIQUE,
+    username        TEXT
 );
 
 

@@ -24,6 +24,9 @@ class PizzeriaModel(BaseModel):
     email: str | None = None
     """E-Mail-Adresse."""
 
+    username: str | None = None
+    """Benutzername des Eigentümers."""
+
     adresse: AdresseModel
     """Zugehörige Adresse (1:1)."""
 
@@ -36,6 +39,7 @@ class PizzeriaModel(BaseModel):
                 "name": "Pizza Napoli",
                 "telefon": "0721 123456",
                 "email": "info@pizza-napoli.de",
+                "username": "pizza-napoli",
                 "adresse": {
                     "strasse": "Kaiserstraße",
                     "hausnummer": "12a",
@@ -69,6 +73,9 @@ class PizzeriaModel(BaseModel):
             name=self.name,
             telefon=self.telefon,
             email=self.email,
+            username=self.username,
+            adresse=self.adresse.to_adresse(),
+            pizzen=[pizza_model.to_pizza() for pizza_model in self.pizzen]
         )
 
         pizzeria.adresse = self.adresse.to_adresse()
