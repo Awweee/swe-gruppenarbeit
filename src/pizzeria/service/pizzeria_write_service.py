@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-"""Geschäftslogik zum Schreiben von pizzeriaendaten."""
+"""Geschäftslogik zum Schreiben von Pizzeriadaten."""
 
 from typing import Final
 
@@ -29,32 +29,32 @@ from pizzeria.service.exceptions import (
     VersionOutdatedError,
 )
 from pizzeria.service.pizzeria_dto import PizzeriaDTO
-lazy from pizzeria.entity import pizzeria
+lazy from pizzeria.entity import Pizzeria
 
 __all__ = ["pizzeriaWriteService"]
 
 
 class pizzeriaWriteService:
-    """Service-Klasse mit Geschäftslogik für pizzeria."""
+    """Service-Klasse mit Geschäftslogik für Pizzerien."""
 
     def __init__(self, repo: repository, user_service: UserService) -> None:
-        """Konstruktor mit abhängigem pizzeriaRepository und UserService."""
+        """Konstruktor mit abhängigem Repository und UserService."""
         self.repo: repository = repo
         self.user_service: UserService = user_service
 
-    def create(self, pizzeria: pizzeria) -> PizzeriaDTO:
-        """Einen neuen pizzeriaen anlegen.
+    def create(self, pizzeria: Pizzeria) -> PizzeriaDTO:
+        """Eine neue Pizzeria anlegen.
 
-        :param pizzeria: Der neue pizzeria ohne ID
-        :return: Der neu angelegte pizzeria mit generierter ID
-        :rtype: pizzeriaDTO
+        :param pizzeria: Die neue Pizzeria ohne ID
+        :return: Die neu angelegte Pizzeria mit generierter ID
+        :rtype: PizzeriaDTO
         :raises EmailExistsError: Falls die Emailadresse bereits existiert
         """
         logger.debug(
-            "pizzeria={}, adresse={}, rechnungen={}",
+            "pizzeria={}, adresse={}, pizzen={}",
             pizzeria,
             pizzeria.adresse,
-            pizzeria.rechnungen,
+            pizzeria.pizzen,
         )
 
         username: Final = pizzeria.username
@@ -73,8 +73,8 @@ class pizzeriaWriteService:
         user: Final = User(
             username=username,
             email=pizzeria.email,
-            nachname=pizzeria.nachname,
-            vorname=pizzeria.nachname,
+            nachname=pizzeria.name,
+            vorname=pizzeria.name,
             password="p",  # ruff: ignore[hardcoded-password-func-arg] # NOSONAR
             roles=[],
         )
@@ -82,12 +82,14 @@ class pizzeriaWriteService:
         logger.debug("user_id={}", user_id)
 
         # durch "with" erhaelt man einen "Context Manager", der die Ressource/Session
-        # am Endes des Blocks schliesst
+        # am Ende des Blocks schliesst
         with Session() as session:
-            if self.repo.exists_email(email=email, session=session):
-                raise EmailExistsError(email=email)
 
-            pizzeria_db: Final = self.repo.create(pizzeria=pizzeria, session=session)
+
+            pizzeria_db: Final = self.repo.create(
+                pizzeria=pizzeria,
+                session=session,
+            )
             pizzeria_dto: Final = PizzeriaDTO.from_pizzeria(pizzeria_db)
             session.commit()
 
@@ -96,19 +98,29 @@ class pizzeriaWriteService:
         logger.debug("pizzeria_dto={}", pizzeria_dto)
         return pizzeria_dto
 
-    def update(self, pizzeria: pizzeria, pizzeria_id: int, version: int) -> PizzeriaDTO:
-        """Daten eines pizzeriaen ändern.
+    def update(
+        self,
+        pizzeria: Pizzeria,
+        pizzeria_id: int,
+        version: int,
+    ) -> PizzeriaDTO:
+        """Daten einer Pizzeria ändern.
 
         :param pizzeria: Die neuen Daten
-        :param pizzeria_id: ID des zu aktualisierenden pizzeriaen
+        :param pizzeria_id: ID der zu aktualisierenden Pizzeria
         :param version: Version für optimistische Synchronisation
-        :return: Der aktualisierte pizzeria
-        :rtype: pizzeriaDTO
-        :raises NotFoundError: Falls der zu aktualisierende pizzeria nicht existiert
+        :return: Die aktualisierte Pizzeria
+        :rtype: PizzeriaDTO
+        :raises NotFoundError: Falls die Pizzeria nicht existiert
         :raises VersionOutdatedError: Falls die Versionsnummer nicht aktuell ist
         :raises EmailExistsError: Falls die Emailadresse bereits existiert
         """
-        logger.debug("pizzeria_id={}, version={}, {}", pizzeria_id, version, pizzeria)
+        logger.debug(
+            "pizzeria_id={}, version={}, {}",
+            pizzeria_id,
+            version,
+            pizzeria,
+        )
 
         with Session() as session:
             if (
@@ -118,36 +130,41 @@ class pizzeriaWriteService:
                 )
             ) is None:
                 raise NotFoundError(pizzeria_id)
+
             if pizzeria_db.version > version:
                 raise VersionOutdatedError(version)
 
-            email: Final = pizzeria.email
-            if email != pizzeria_db.email and self.repo.exists_email_other_id(
-                pizzeria_id=pizzeria_id,
-                email=email,
-                session=session,
-            ):
-                raise EmailExistsError(email)
 
             pizzeria_db.set(pizzeria)
+
             if (
-                pizzeria_updated := self.repo.update(pizzeria=pizzeria_db, session=session)
+                pizzeria_updated := self.repo.update(
+                    pizzeria=pizzeria_db,
+                    session=session,
+                )
             ) is None:
                 raise NotFoundError(pizzeria_id)
+
             pizzeria_dto: Final = PizzeriaDTO.from_pizzeria(pizzeria_updated)
             logger.debug("{}", pizzeria_dto)
 
             session.commit()
-            # CAVEAT: Die erhoehte Versionsnummer ist erst COMMIT sichtbar
+
+            # CAVEAT: Die erhoehte Versionsnummer ist erst nach COMMIT sichtbar
             pizzeria_dto.version += 1
+
             return pizzeria_dto
 
     def delete_by_id(self, pizzeria_id: int) -> None:
-        """Einen pizzeriaen anhand seiner ID löschen.
+        """Eine Pizzeria anhand ihrer ID löschen.
 
-        :param pizzeria_id: ID des zu löschenden pizzeriaen
+        :param pizzeria_id: ID der zu löschenden Pizzeria
         """
         logger.debug("pizzeria_id={}", pizzeria_id)
+
         with Session() as session:
-            self.repo.delete_by_id(pizzeria_id=pizzeria_id, session=session)
+            self.repo.delete_by_id(
+                pizzeria_id=pizzeria_id,
+                session=session,
+            )
             session.commit()
