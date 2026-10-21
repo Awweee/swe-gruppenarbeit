@@ -2954,3 +2954,31 @@
 2026-10-21 15:14:22.229 | DEBUG    | pizzeria.fastapi_app:log_response_time:138 - Response time: 28.51 ms, statuscode: 200
 2026-10-21 15:14:44.638 | INFO     | pizzeria.fastapi_app:lifespan:89 - Der Server wird heruntergefahren
 2026-10-21 15:14:44.638 | INFO     | pizzeria.fastapi_app:lifespan:90 - Connection-Pool fuer die DB wird getrennt.
+2026-10-21 15:51:28.050 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-21 15:51:28.051 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-21 15:51:28.051 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-21 15:51:28.051 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-21 15:51:28.051 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 15:51:28.051 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-21 15:51:28.054 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-21 15:51:28.054 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 15:51:28.054 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-21 15:51:28.058 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-21 15:51:28.059 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-21 15:51:28.059 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-21 15:51:29.041 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-21 15:51:29.041 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-21 17:40:24.672 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-21 17:40:24.673 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-21 17:40:24.673 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-21 17:40:24.673 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-21 17:40:24.673 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 17:40:24.673 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-21 17:40:24.675 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='aNzCzH1fsd4CXdEQ1DppHPd02LtOLIP6vhladk5ABsQwj69JTRyQijIOoqYFxya63u3u5QQy9dAeviz2c8KxLn', verify=False)
+2026-10-21 17:40:24.675 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 17:40:24.675 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-21 17:40:24.679 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-21 17:40:24.679 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-21 17:40:24.679 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-21 17:40:25.543 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-21 17:40:25.544 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
