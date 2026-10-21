@@ -52,6 +52,8 @@ class AdresseResponseModel(BaseModel):
 
     plz: str
     ort: str
+    strasse: str
+    hausnummer: str
 
     model_config = ConfigDict(from_attributes=True, strict=True, extra="forbid")
 
@@ -65,10 +67,9 @@ class pizzeriaResponseModel(BaseModel):
 
     id: int
     name: str
-    telefon: str
+    telefon: str | None = None
     email: str
-    adresse: str
-    pizzen: list[PizzaModel]
+    adresse: AdresseResponseModel
 
     model_config = ConfigDict(from_attributes=True, strict=True, extra="forbid")
     # https://pydantic.dev/docs/validation/latest/api/pydantic/config/#pydantic.config.ConfigDict

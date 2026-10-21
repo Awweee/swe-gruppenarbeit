@@ -51,6 +51,8 @@ class Pizzeria(Base):
 
     username: Mapped[str | None]
 
+    version: Mapped[int] = mapped_column(nullable=False, default=0)
+
     @override
     def __repr__(self) -> str:
         """Ausgabe der Pizzeria ohne zusätzliche Datenbankabfragen."""

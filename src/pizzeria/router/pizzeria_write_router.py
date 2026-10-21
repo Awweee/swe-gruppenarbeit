@@ -71,7 +71,7 @@ def post(
 
 @pizzeria_write_router.put(
     "/{pizzeria_id}",
-    dependencies=[Depends(RolesRequired([Role.ADMIN, Role.pizzeria]))],
+    dependencies=[Depends(RolesRequired([Role.ADMIN, Role.PIZZERIA]))],
 )
 def put(
     pizzeria_id: int,

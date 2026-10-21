@@ -31,7 +31,7 @@ class Service:
             user_is_admin: Final = Role.ADMIN in user.roles
 
             if (
-                pizzeria := self.repo.find_by_id(session=session, pizzeria_id=pizzeria_id)
+                pizzeria := self.repository.find_by_id(session=session, pizzeria_id=pizzeria_id)
             ) is None:
                 if user_is_admin:
                     message: Final = f"Keine Pizzeria mit der ID {pizzeria_id}"

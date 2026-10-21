@@ -7,7 +7,7 @@ from pizzeria.service.exceptions import (
 )
 from pizzeria.service.pizzeria_dto import PizzeriaDTO
 from pizzeria.service.service import Service
-#rom pizzeria.service.pizzeria_write_service import pizzeriaWriteService
+#from pizzeria.service.pizzeria_write_service import pizzeriaWriteService
 
 # https://docs.python.org/3/tutorial/modules.html#importing-from-a-package
 __all__ = [
@@ -15,5 +15,6 @@ __all__ = [
     "NotFoundError",
     "PizzeriaDTO",
     "Service",
+    "AdresseDTO",
 
 ]
