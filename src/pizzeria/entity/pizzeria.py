@@ -1,18 +1,17 @@
 """Entity-Klasse für Pizzeria."""
 
-from typing import TYPE_CHECKING, override
+from typing import TYPE_CHECKING, Self, override
 
 from sqlalchemy import Identity
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from pizzeria.entity import pizza
 from pizzeria.entity.base import Base
 
 if TYPE_CHECKING:
     from pizzeria.entity.adresse import Adresse
     from pizzeria.entity.pizza import Pizza
 
-#id;name;email;eroeffnungsdatum
+
 class Pizzeria(Base):
     """Entity-Klasse für Pizzeriadaten."""
 
@@ -25,6 +24,7 @@ class Pizzeria(Base):
     """Die generierte ID."""
 
     telefon: Mapped[str | None] = mapped_column(nullable=True)
+    """Die optionale Telefonnummer."""
 
     name: Mapped[str]
     """Der Name der Pizzeria."""
@@ -50,13 +50,29 @@ class Pizzeria(Base):
     """Die in einer 1:N-Beziehung referenzierten Pizzen."""
 
     username: Mapped[str | None]
+    """Der Benutzername für Login."""
 
+    # https://docs.sqlalchemy.org/en/20/orm/versioning.html#simple-version-counting
     version: Mapped[int] = mapped_column(nullable=False, default=0)
+    """Die Versionsnummer für optimistische Synchronisation."""
+
+    # https://docs.sqlalchemy.org/en/20/orm/versioning.html#simple-version-counting
+    __mapper_args__ = {"version_id_col": version}
+
+    def set(self, pizzeria: Self) -> None:
+        """Primitive Attributwerte überschreiben, z.B. vor DB-Update.
+
+        :param pizzeria: Pizzeria-Objekt mit den aktuellen Daten
+        """
+        self.name = pizzeria.name
+        self.telefon = pizzeria.telefon
+        self.email = pizzeria.email
 
     @override
     def __repr__(self) -> str:
         """Ausgabe der Pizzeria ohne zusätzliche Datenbankabfragen."""
         return (
-            f"Pizzeria(id={self.id}, name={self.name}, "
-            f"telefon={self.telefon}, email={self.email})"
+            f"Pizzeria(id={self.id}, version={self.version}, "
+            f"name={self.name}, telefon={self.telefon}, "
+            f"email={self.email}, username={self.username})"
         )
