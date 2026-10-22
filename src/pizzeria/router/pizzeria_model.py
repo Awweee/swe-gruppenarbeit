@@ -15,7 +15,7 @@ __all__ = ["PizzeriaModel"]
 class PizzeriaModel(BaseModel):
     """Pydantic-Model für die Pizzeriadaten einschließlich Beziehungen."""
 
-    name: Annotated[str, StringConstraints(min_length=1, max_length=100)]
+    name: Annotated[str, StringConstraints(min_length=1, max_length=88)]
     """Name der Pizzeria."""
 
     telefon: str | None = None
