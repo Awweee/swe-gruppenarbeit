@@ -3160,3 +3160,726 @@
 2026-10-21 20:39:53.694 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
 2026-10-21 20:39:53.708 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
 2026-10-21 20:39:53.708 | INFO     | pizzeria.banner:banner:152 - 10 Routes:
+2026-10-21 21:45:44.144 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/auth/token'
+2026-10-21 21:45:44.160 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 16.20 ms, statuscode: 405
+2026-10-21 21:45:48.839 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - GET 'https://127.0.0.1:8000/rest/2'
+2026-10-21 21:45:48.844 | DEBUG    | pizzeria.security.token_service:_get_token_from_request:83 - authorization_header=None
+2026-10-21 21:45:48.845 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 6.65 ms, statuscode: 401
+2026-10-21 21:51:53.269 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:51:53.273 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 4.41 ms, statuscode: 404
+2026-10-21 21:51:54.696 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:51:54.697 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 1.20 ms, statuscode: 404
+2026-10-21 21:52:49.547 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:52:49.554 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 8.15 ms, statuscode: 404
+2026-10-21 21:52:50.664 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:52:50.665 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 1.22 ms, statuscode: 404
+2026-10-21 21:52:51.444 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:52:51.445 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 1.25 ms, statuscode: 404
+2026-10-21 21:52:52.059 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 21:52:52.060 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 1.40 ms, statuscode: 404
+2026-10-21 21:53:49.384 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - GET 'https://127.0.0.1:8000/docs?utm_source=chatgpt.com'
+2026-10-21 21:53:49.389 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 5.29 ms, statuscode: 200
+2026-10-21 21:54:09.134 | DEBUG    | pizzeria.fastapi_app:log_request_header:124 - GET 'https://127.0.0.1:8000/docs?utm_source=chatgpt.com'
+2026-10-21 21:54:09.135 | DEBUG    | pizzeria.fastapi_app:log_response_time:136 - Response time: 0.92 ms, statuscode: 200
+2026-10-21 21:54:54.127 | INFO     | pizzeria.fastapi_app:lifespan:87 - Der Server wird heruntergefahren
+2026-10-21 21:54:54.129 | INFO     | pizzeria.fastapi_app:lifespan:88 - Connection-Pool fuer die DB wird getrennt.
+2026-10-21 21:54:56.098 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-21 21:54:56.098 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-21 21:54:56.098 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-21 21:54:56.098 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-21 21:54:56.098 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 21:54:56.098 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-21 21:54:56.100 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-21 21:54:56.100 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 21:54:56.100 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-21 21:54:56.103 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-21 21:54:56.104 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-21 21:54:56.104 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-21 21:54:56.899 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-21 21:54:56.899 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-21 21:54:57.991 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-21 21:54:58.012 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-21 21:54:58.244 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-21 21:54:58.250 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-21 21:54:58.312 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-21 21:54:58.752 | DEBUG    | pizzeria.config.dev.keycloak_populate:_remove_users:61 - Alle User außer 'admin' geloescht
+2026-10-21 21:54:58.753 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:64 - Aktuelles Verzeichnis: /Users/abdullah/SWE/Pizzeria
+2026-10-21 21:54:58.753 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:69 - CSV-Datei: extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 21:54:58.754 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizza-napoli'
+2026-10-21 21:54:58.755 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-napoli', email='info@pizzeria-napoli.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:58.756 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-napoli'
+2026-10-21 21:54:58.832 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=840e1305-9b01-4c5a-9896-d79f2ffd90d7
+2026-10-21 21:54:58.852 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='la-dolce-vita'
+2026-10-21 21:54:58.853 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='la-dolce-vita', email='kontakt@ladolcevita.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:58.853 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='la-dolce-vita'
+2026-10-21 21:54:58.895 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=da982a7a-e6e5-4929-9103-87a73dbbcf35
+2026-10-21 21:54:58.906 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-roma'
+2026-10-21 21:54:58.907 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-roma', email='info@pizzeria-roma.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:58.907 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-roma'
+2026-10-21 21:54:58.943 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=f6bc6e70-4dac-4b56-bb4b-5ff22efe76b0
+2026-10-21 21:54:58.956 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='mamma-mia'
+2026-10-21 21:54:58.956 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='mamma-mia', email='info@mammamia-pizzeria.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:58.956 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='mamma-mia'
+2026-10-21 21:54:58.989 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=7b8a546d-db69-482e-99d1-7a3d75734958
+2026-10-21 21:54:59.001 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='trattoria-sicilia'
+2026-10-21 21:54:59.001 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='trattoria-sicilia', email='kontakt@trattoria-sicilia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:59.001 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='trattoria-sicilia'
+2026-10-21 21:54:59.033 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=b80683ea-0289-487b-8823-0a5d3e525f8b
+2026-10-21 21:54:59.046 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-venezia'
+2026-10-21 21:54:59.046 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-venezia', email='info@pizzeria-venezia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 21:54:59.046 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-venezia'
+2026-10-21 21:54:59.078 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=a2cbfb73-703b-40c4-881a-dbb58baa2773
+2026-10-21 21:54:59.093 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:96 - Alle User zu 'pizzeria.csv' neu angelegt
+2026-10-21 21:54:59.093 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:55 - >>> Keycloak wurde neu geladen <<<
+2026-10-21 21:54:59.096 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-21 21:54:59.097 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-21 21:54:59.097 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-21 21:54:59.098 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-21 21:54:59.098 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-21 21:54:59.098 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-21 21:54:59.099 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-21 21:54:59.100 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-21 21:54:59.100 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-21 21:54:59.111 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-21 21:54:59.111 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-21 21:55:08.095 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - GET 'https://127.0.0.1:8000/docs?utm_source=chatgpt.com'
+2026-10-21 21:55:08.101 | DEBUG    | pizzeria.fastapi_app:log_response_time:137 - Response time: 5.60 ms, statuscode: 200
+2026-10-21 21:55:11.297 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - GET 'https://127.0.0.1:8000/docs?utm_source=chatgpt.com'
+2026-10-21 21:55:11.300 | DEBUG    | pizzeria.fastapi_app:log_response_time:137 - Response time: 2.90 ms, statuscode: 200
+2026-10-21 21:56:07.888 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - GET 'https://127.0.0.1:8000/openapi.json?utm_source=chatgpt.com'
+2026-10-21 21:56:07.939 | DEBUG    | pizzeria.fastapi_app:log_response_time:137 - Response time: 52.13 ms, statuscode: 200
+2026-10-21 21:56:07.970 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - GET 'https://127.0.0.1:8000/favicon.ico'
+2026-10-21 21:56:07.973 | DEBUG    | pizzeria.fastapi_app:favicon:200 - file_path=src/pizzeria/static/favicon.ico
+2026-10-21 21:58:55.927 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-21 21:58:55.930 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-21 21:59:15.822 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-21 21:59:15.823 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-21 21:59:15.823 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-21 21:59:15.823 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-21 21:59:15.823 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 21:59:15.823 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-21 21:59:15.825 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-21 21:59:15.825 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 21:59:15.825 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-21 21:59:15.830 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-21 21:59:15.830 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-21 21:59:15.830 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-21 21:59:16.697 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-21 21:59:16.697 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-21 21:59:16.783 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-21 21:59:16.927 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-21 21:59:16.987 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-21 21:59:16.995 | ERROR    | pizzeria.config.dev.keycloak_populate:populate:57 - >>> Keine Keycloak-Verbindung! Ist Keycloak gestartet? <<<
+2026-10-21 21:59:17.000 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-21 21:59:17.000 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-21 21:59:17.000 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-21 21:59:17.001 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-21 21:59:17.001 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-21 21:59:17.001 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-21 21:59:17.002 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-21 21:59:17.003 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-21 21:59:17.003 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-21 21:59:17.003 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-21 21:59:17.003 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-21 21:59:17.013 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-21 21:59:17.013 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-21 22:00:00.564 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:00:00.616 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:00.617 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:00.648 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test)
+2026-10-21 22:00:00.648 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test), adresse=Adresse(id=None, strasse=Brennerstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-21 22:00:00.649 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test
+2026-10-21 22:00:01.649 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=None
+2026-10-21 22:00:01.650 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=False
+2026-10-21 22:00:01.650 | DEBUG    | pizzeria.security.user_service:email_exists:107 - email=info@pizza-test.de
+2026-10-21 22:00:01.664 | DEBUG    | pizzeria.security.user_service:email_exists:112 - users=[]
+2026-10-21 22:00:01.664 | DEBUG    | pizzeria.security.user_service:email_exists:114 - exists=False
+2026-10-21 22:00:01.665 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-test', email='info@pizza-test.de', nachname='Pizza Test', vorname='Pizza Test', roles=[], password='p')
+2026-10-21 22:00:01.665 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-test'
+2026-10-21 22:00:01.803 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=c9282fcc-7276-47bb-a48e-aae7eb13a311
+2026-10-21 22:00:41.119 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:00:41.131 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:41.132 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:41.134 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test)
+2026-10-21 22:00:41.134 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test), adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-21 22:00:41.134 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test
+2026-10-21 22:00:41.261 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=c9282fcc-7276-47bb-a48e-aae7eb13a311
+2026-10-21 22:00:41.262 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=True
+2026-10-21 22:00:53.778 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:00:53.780 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:53.780 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:00:53.782 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test)
+2026-10-21 22:00:53.782 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test), adresse=Adresse(id=None, strasse=Brennerstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-21 22:00:53.782 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test
+2026-10-21 22:00:53.804 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=c9282fcc-7276-47bb-a48e-aae7eb13a311
+2026-10-21 22:00:53.804 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=True
+2026-10-21 22:01:04.454 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:01:04.458 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margheria', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:01:04.458 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Brennerstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margheria', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:01:04.463 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test)
+2026-10-21 22:01:04.463 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test), adresse=Adresse(id=None, strasse=Brennerstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margheria, preis=8.50, vegetarisch=True)]
+2026-10-21 22:01:04.464 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test
+2026-10-21 22:01:04.487 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=c9282fcc-7276-47bb-a48e-aae7eb13a311
+2026-10-21 22:01:04.488 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=True
+2026-10-21 22:01:54.128 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:01:54.139 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:01:54.140 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test.de' username='pizza-test' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:01:54.143 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test)
+2026-10-21 22:01:54.143 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test.de, username=pizza-test), adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-21 22:01:54.144 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test
+2026-10-21 22:01:54.259 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=c9282fcc-7276-47bb-a48e-aae7eb13a311
+2026-10-21 22:01:54.259 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=True
+2026-10-21 22:03:23.911 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-21 22:03:23.921 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:03:23.921 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-21 22:03:23.922 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu)
+2026-10-21 22:03:23.922 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu), adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-21 22:03:23.922 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test-neu
+2026-10-21 22:03:24.015 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=None
+2026-10-21 22:03:24.016 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=False
+2026-10-21 22:03:24.016 | DEBUG    | pizzeria.security.user_service:email_exists:107 - email=info@pizza-test-neu.de
+2026-10-21 22:03:24.041 | DEBUG    | pizzeria.security.user_service:email_exists:112 - users=[]
+2026-10-21 22:03:24.041 | DEBUG    | pizzeria.security.user_service:email_exists:114 - exists=False
+2026-10-21 22:03:24.041 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-test-neu', email='info@pizza-test-neu.de', nachname='Pizza Test', vorname='Pizza Test', roles=[], password='p')
+2026-10-21 22:03:24.041 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-test-neu'
+2026-10-21 22:03:24.096 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=d2e72b0b-d4ed-4035-8803-f5f2fcded2a7
+2026-10-21 22:07:45.738 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-21 22:07:45.741 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-21 22:07:48.852 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-21 22:07:48.852 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-21 22:07:48.852 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-21 22:07:48.852 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-21 22:07:48.852 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 22:07:48.852 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-21 22:07:48.854 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-21 22:07:48.854 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 22:07:48.854 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-21 22:07:48.857 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-21 22:07:48.857 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-21 22:07:48.857 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-21 22:07:49.592 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-21 22:07:49.592 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-21 22:07:49.866 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-21 22:07:49.874 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-21 22:07:50.075 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-21 22:07:50.083 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-21 22:07:50.137 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-21 22:07:50.546 | DEBUG    | pizzeria.config.dev.keycloak_populate:_remove_users:61 - Alle User außer 'admin' geloescht
+2026-10-21 22:07:50.547 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:64 - Aktuelles Verzeichnis: /Users/abdullah/SWE/Pizzeria
+2026-10-21 22:07:50.547 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:69 - CSV-Datei: extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-21 22:07:50.548 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizza-napoli'
+2026-10-21 22:07:50.548 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-napoli', email='info@pizzeria-napoli.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.548 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-napoli'
+2026-10-21 22:07:50.586 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=c1e0b94b-26b5-406a-b0cc-983ae12c0cc4
+2026-10-21 22:07:50.604 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='la-dolce-vita'
+2026-10-21 22:07:50.605 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='la-dolce-vita', email='kontakt@ladolcevita.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.605 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='la-dolce-vita'
+2026-10-21 22:07:50.642 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=604285a4-1a0c-4f50-b2ee-28a2bea2f8dd
+2026-10-21 22:07:50.655 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-roma'
+2026-10-21 22:07:50.655 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-roma', email='info@pizzeria-roma.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.656 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-roma'
+2026-10-21 22:07:50.691 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=e4e35a6f-835c-4e3a-b788-d6265485566a
+2026-10-21 22:07:50.703 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='mamma-mia'
+2026-10-21 22:07:50.704 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='mamma-mia', email='info@mammamia-pizzeria.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.704 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='mamma-mia'
+2026-10-21 22:07:50.741 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=ab32dac5-8ed7-474f-8b4a-f250a26c55ae
+2026-10-21 22:07:50.754 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='trattoria-sicilia'
+2026-10-21 22:07:50.754 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='trattoria-sicilia', email='kontakt@trattoria-sicilia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.754 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='trattoria-sicilia'
+2026-10-21 22:07:50.792 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=5dbbc435-7b1f-4c29-ab66-12cf8929c4ca
+2026-10-21 22:07:50.806 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-venezia'
+2026-10-21 22:07:50.806 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-venezia', email='info@pizzeria-venezia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-21 22:07:50.807 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-venezia'
+2026-10-21 22:07:50.844 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=e57f3eba-19d2-4be4-b79c-f9075a9c7bd2
+2026-10-21 22:07:50.856 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:96 - Alle User zu 'pizzeria.csv' neu angelegt
+2026-10-21 22:07:50.856 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:55 - >>> Keycloak wurde neu geladen <<<
+2026-10-21 22:07:50.862 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-21 22:07:50.862 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-21 22:07:50.862 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-21 22:07:50.863 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-21 22:07:50.863 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-21 22:07:50.863 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-21 22:07:50.863 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-21 22:07:50.863 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-21 22:07:50.864 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-21 22:07:50.874 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-21 22:07:50.874 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-21 22:16:22.372 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-21 22:16:22.374 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-22 11:32:33.921 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-22 11:32:33.921 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-22 11:32:33.921 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-22 11:32:33.921 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-22 11:32:33.921 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-22 11:32:33.921 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-22 11:32:33.924 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-22 11:32:33.924 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-22 11:32:33.924 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-22 11:32:33.927 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-22 11:32:33.928 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-22 11:32:33.928 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-22 11:32:34.932 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-22 11:32:34.932 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-22 11:32:35.029 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-22 11:32:35.196 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-22 11:32:35.262 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-22 11:32:35.267 | ERROR    | pizzeria.config.dev.keycloak_populate:populate:57 - >>> Keine Keycloak-Verbindung! Ist Keycloak gestartet? <<<
+2026-10-22 11:32:35.271 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-22 11:32:35.271 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-22 11:32:35.271 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-22 11:32:35.272 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-22 11:32:35.272 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-22 11:32:35.272 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-22 11:32:35.273 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBook-Pro-von-Abdullah.local
+2026-10-22 11:32:35.292 | INFO     | pizzeria.banner:banner:151 - IP               127.0.0.1
+2026-10-22 11:32:35.292 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-22 11:33:17.359 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-22 11:33:17.361 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-22 11:33:21.146 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-22 11:33:21.146 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-22 11:33:21.146 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-22 11:33:21.146 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-22 11:33:21.146 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-22 11:33:21.147 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-22 11:33:21.149 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-22 11:33:21.149 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-22 11:33:21.149 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-22 11:33:21.152 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-22 11:33:21.153 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-22 11:33:21.153 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-22 11:33:21.949 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-22 11:33:21.949 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-22 11:33:22.692 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-22 11:33:22.714 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-22 11:33:22.937 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=1a037bd2-3029-495e-9ba3-309b3638e80b für 'python-client'
+2026-10-22 11:33:22.943 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '91c383c6-0ba0-476f-9cfd-cd72e98e3063', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': '1a037bd2-3029-495e-9ba3-309b3638e80b'}
+2026-10-22 11:33:23.002 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-22 11:33:23.423 | DEBUG    | pizzeria.config.dev.keycloak_populate:_remove_users:61 - Alle User außer 'admin' geloescht
+2026-10-22 11:33:23.425 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:64 - Aktuelles Verzeichnis: /Users/abdullah/SWE/Pizzeria
+2026-10-22 11:33:23.425 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:69 - CSV-Datei: extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-22 11:33:23.426 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizza-napoli'
+2026-10-22 11:33:23.426 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-napoli', email='info@pizzeria-napoli.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.427 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-napoli'
+2026-10-22 11:33:23.503 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=7ec9d909-db9c-4c10-bc86-6e666225fadc
+2026-10-22 11:33:23.524 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='la-dolce-vita'
+2026-10-22 11:33:23.524 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='la-dolce-vita', email='kontakt@ladolcevita.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.524 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='la-dolce-vita'
+2026-10-22 11:33:23.562 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=81a2139b-e3da-4d9d-89c6-5cee3bca0634
+2026-10-22 11:33:23.579 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-roma'
+2026-10-22 11:33:23.580 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-roma', email='info@pizzeria-roma.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.580 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-roma'
+2026-10-22 11:33:23.624 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=4cccc72d-8fac-49ec-b14c-81dfdf4bb616
+2026-10-22 11:33:23.638 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='mamma-mia'
+2026-10-22 11:33:23.639 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='mamma-mia', email='info@mammamia-pizzeria.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.639 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='mamma-mia'
+2026-10-22 11:33:23.676 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=808b7262-d29a-41af-a20f-77b797e13f59
+2026-10-22 11:33:23.690 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='trattoria-sicilia'
+2026-10-22 11:33:23.691 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='trattoria-sicilia', email='kontakt@trattoria-sicilia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.691 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='trattoria-sicilia'
+2026-10-22 11:33:23.728 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=efe4d1b0-0221-4aef-9987-ac34445d3323
+2026-10-22 11:33:23.742 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-venezia'
+2026-10-22 11:33:23.742 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-venezia', email='info@pizzeria-venezia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-22 11:33:23.742 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-venezia'
+2026-10-22 11:33:23.795 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=e45fa3e2-45b1-4bf7-9e08-e416364ce6c2
+2026-10-22 11:33:23.808 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:96 - Alle User zu 'pizzeria.csv' neu angelegt
+2026-10-22 11:33:23.809 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:55 - >>> Keycloak wurde neu geladen <<<
+2026-10-22 11:33:23.816 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-22 11:33:23.817 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-22 11:33:23.817 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-22 11:33:23.818 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-22 11:33:23.818 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-22 11:33:23.818 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-22 11:33:23.818 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-22 11:33:23.819 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBook-Pro-von-Abdullah.local
+2026-10-22 11:33:23.822 | INFO     | pizzeria.banner:banner:151 - IP               127.0.0.1
+2026-10-22 11:33:23.822 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-22 11:33:55.077 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-22 11:33:55.090 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-22 11:33:55.090 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-22 11:33:55.098 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu)
+2026-10-22 11:33:55.098 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu), adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-22 11:33:55.098 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test-neu
+2026-10-22 11:33:55.199 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=None
+2026-10-22 11:33:55.199 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=False
+2026-10-22 11:33:55.199 | DEBUG    | pizzeria.security.user_service:email_exists:107 - email=info@pizza-test-neu.de
+2026-10-22 11:33:55.219 | DEBUG    | pizzeria.security.user_service:email_exists:112 - users=[]
+2026-10-22 11:33:55.220 | DEBUG    | pizzeria.security.user_service:email_exists:114 - exists=False
+2026-10-22 11:33:55.220 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-test-neu', email='info@pizza-test-neu.de', nachname='Pizza Test', vorname='Pizza Test', roles=[], password='p')
+2026-10-22 11:33:55.220 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-test-neu'
+2026-10-22 11:33:55.276 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=9755d165-eec6-4f68-bbc5-bd27aed0845b
+2026-10-22 11:33:55.290 | DEBUG    | pizzeria.service.pizzeria_write_service:create:86 - user_id=9755d165-eec6-4f68-bbc5-bd27aed0845b
+2026-10-22 11:33:55.291 | DEBUG    | pizzeria.repository.repository:create:186 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu), pizzeria.adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzeria.pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-22 11:42:20.326 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-22 11:42:20.330 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-25 14:29:05.165 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 14:29:05.166 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 14:29:05.166 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-25 14:29:05.166 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 14:29:05.166 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 14:29:05.166 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 14:29:05.168 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-25 14:29:05.168 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 14:29:05.168 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 14:29:05.172 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 14:29:05.172 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 14:29:05.172 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 14:29:06.540 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 14:29:06.540 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 14:29:06.610 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-25 14:29:06.759 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-25 14:29:06.832 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-25 14:29:06.834 | ERROR    | pizzeria.config.dev.keycloak_populate:populate:57 - >>> Keine Keycloak-Verbindung! Ist Keycloak gestartet? <<<
+2026-10-25 14:29:06.837 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-25 14:29:06.837 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-25 14:29:06.837 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-25 14:29:06.838 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-25 14:29:06.839 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-25 14:29:06.852 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-25 14:29:06.852 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-25 14:29:13.824 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-25 14:29:13.826 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-25 14:29:59.437 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 14:29:59.437 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 14:29:59.437 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-25 14:29:59.438 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 14:29:59.438 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 14:29:59.438 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 14:29:59.440 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY', verify=False)
+2026-10-25 14:29:59.440 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 14:29:59.440 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 14:29:59.443 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 14:29:59.444 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 14:29:59.444 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 14:30:00.340 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 14:30:00.340 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 14:30:00.421 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-25 14:30:00.565 | ERROR    | pizzeria.security.user_service:__init__:77 - Keine Verbindung zu Keycloak! Ist Keycloak gestartet?
+2026-10-25 14:30:00.622 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-25 14:30:00.625 | ERROR    | pizzeria.config.dev.keycloak_populate:populate:57 - >>> Keine Keycloak-Verbindung! Ist Keycloak gestartet? <<<
+2026-10-25 14:30:00.628 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-25 14:30:00.628 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-25 14:30:00.628 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-25 14:30:00.629 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-25 14:30:00.629 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-25 14:30:00.629 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-25 14:30:00.630 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-25 14:30:00.631 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-25 14:30:00.643 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-25 14:30:00.643 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-25 14:30:34.989 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-25 14:30:34.990 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-25 15:17:13.642 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 15:17:13.642 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 15:17:13.642 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-25 15:17:13.642 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 15:17:13.642 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 15:17:13.642 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 15:17:13.644 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', verify=False)
+2026-10-25 15:17:13.644 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 15:17:13.644 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 15:17:13.647 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 15:17:13.648 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 15:17:13.648 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 15:17:14.440 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 15:17:14.440 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 15:17:14.993 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 15:17:15.006 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 15:17:15.213 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 15:17:15.219 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 15:17:15.278 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-25 15:17:15.304 | DEBUG    | pizzeria.config.dev.keycloak_populate:_remove_users:61 - Alle User außer 'admin' geloescht
+2026-10-25 15:17:15.305 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:64 - Aktuelles Verzeichnis: /Users/abdullah/SWE/Pizzeria
+2026-10-25 15:17:15.305 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:69 - CSV-Datei: extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 15:17:15.305 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizza-napoli'
+2026-10-25 15:17:15.305 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-napoli', email='info@pizzeria-napoli.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.305 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-napoli'
+2026-10-25 15:17:15.447 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=42169020-517b-47b3-a150-8b575baed918
+2026-10-25 15:17:15.465 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='la-dolce-vita'
+2026-10-25 15:17:15.465 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='la-dolce-vita', email='kontakt@ladolcevita.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.465 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='la-dolce-vita'
+2026-10-25 15:17:15.501 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=2a63f2ad-4473-4ef4-8581-6573504e93e6
+2026-10-25 15:17:15.514 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-roma'
+2026-10-25 15:17:15.514 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-roma', email='info@pizzeria-roma.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.515 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-roma'
+2026-10-25 15:17:15.555 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=7807ab06-53f5-43ad-a01b-4c1427a26f54
+2026-10-25 15:17:15.567 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='mamma-mia'
+2026-10-25 15:17:15.567 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='mamma-mia', email='info@mammamia-pizzeria.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.567 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='mamma-mia'
+2026-10-25 15:17:15.603 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=e5672ae1-ec23-47f0-8ff2-873f8bfc245c
+2026-10-25 15:17:15.621 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='trattoria-sicilia'
+2026-10-25 15:17:15.621 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='trattoria-sicilia', email='kontakt@trattoria-sicilia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.621 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='trattoria-sicilia'
+2026-10-25 15:17:15.658 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=466146a9-9b69-4451-bf81-1ee645f31152
+2026-10-25 15:17:15.670 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-venezia'
+2026-10-25 15:17:15.670 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-venezia', email='info@pizzeria-venezia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 15:17:15.670 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-venezia'
+2026-10-25 15:17:15.703 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=71494fb3-193b-4115-bad0-6ee51110d94d
+2026-10-25 15:17:15.715 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:96 - Alle User zu 'pizzeria.csv' neu angelegt
+2026-10-25 15:17:15.715 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:55 - >>> Keycloak wurde neu geladen <<<
+2026-10-25 15:17:15.718 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-25 15:17:15.718 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-25 15:17:15.718 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-25 15:17:15.719 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-25 15:17:15.719 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-25 15:17:15.719 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-25 15:17:15.720 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-25 15:17:15.721 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-25 15:17:15.721 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-25 15:17:15.732 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-25 15:17:15.732 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-25 15:23:08.126 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - GET 'https://127.0.0.1:8000/rest/2'
+2026-10-25 15:23:08.140 | DEBUG    | pizzeria.security.token_service:_get_token_from_request:83 - authorization_header=None
+2026-10-25 15:23:08.141 | DEBUG    | pizzeria.fastapi_app:log_response_time:137 - Response time: 16.06 ms, statuscode: 401
+2026-10-25 15:23:49.825 | DEBUG    | pizzeria.fastapi_app:log_request_header:125 - POST 'https://127.0.0.1:8000/rest'
+2026-10-25 15:23:49.834 | DEBUG    | pizzeria.router.pizzeria_write_router:post:29 - pizzeria_model=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-25 15:23:49.835 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:70 - self=name='Pizza Test' telefon='0721 123456' email='info@pizza-test-neu.de' username='pizza-test-neu' adresse=AdresseModel(strasse='Kaiserstraße', hausnummer='12a', plz='76133', ort='Karlsruhe') pizzen=[PizzaModel(name='Margherita', beschreibung='Tomaten, Mozzarella, Basilikum', preis=Decimal('8.50'), vegetarisch=True)]
+2026-10-25 15:23:49.854 | DEBUG    | pizzeria.router.pizzeria_model:to_pizzeria:87 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu)
+2026-10-25 15:23:49.855 | DEBUG    | pizzeria.service.pizzeria_write_service:create:55 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu), adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-25 15:23:49.855 | DEBUG    | pizzeria.security.user_service:username_exists:89 - username=pizza-test-neu
+2026-10-25 15:23:49.943 | DEBUG    | pizzeria.security.user_service:username_exists:94 - user_id=None
+2026-10-25 15:23:49.943 | DEBUG    | pizzeria.security.user_service:username_exists:96 - exists=False
+2026-10-25 15:23:49.944 | DEBUG    | pizzeria.security.user_service:email_exists:107 - email=info@pizza-test-neu.de
+2026-10-25 15:23:49.960 | DEBUG    | pizzeria.security.user_service:email_exists:112 - users=[]
+2026-10-25 15:23:49.960 | DEBUG    | pizzeria.security.user_service:email_exists:114 - exists=False
+2026-10-25 15:23:49.960 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-test-neu', email='info@pizza-test-neu.de', nachname='Pizza Test', vorname='Pizza Test', roles=[], password='p')
+2026-10-25 15:23:49.961 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-test-neu'
+2026-10-25 15:23:50.072 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=75951b5e-e301-4912-95cc-29e0d2623dce
+2026-10-25 15:23:50.093 | DEBUG    | pizzeria.service.pizzeria_write_service:create:86 - user_id=75951b5e-e301-4912-95cc-29e0d2623dce
+2026-10-25 15:23:50.094 | DEBUG    | pizzeria.repository.repository:create:186 - pizzeria=Pizzeria(id=None, version=None, name=Pizza Test, telefon=0721 123456, email=info@pizza-test-neu.de, username=pizza-test-neu), pizzeria.adresse=Adresse(id=None, strasse=Kaiserstraße, hausnummer=12a, plz=76133, ort=Karlsruhe), pizzeria.pizzen=[Pizza(id=None, name=Margherita, preis=8.50, vegetarisch=True)]
+2026-10-25 16:17:49.736 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-25 16:17:49.739 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-25 16:17:52.674 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 16:17:52.674 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 16:17:52.674 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': False, 'keycloak-populate': True}}
+2026-10-25 16:17:52.674 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 16:17:52.674 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 16:17:52.674 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 16:17:52.676 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', verify=False)
+2026-10-25 16:17:52.676 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 16:17:52.676 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 16:17:52.679 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 16:17:52.680 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 16:17:52.680 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 16:17:53.451 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 16:17:53.452 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 16:17:53.658 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:17:53.663 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:17:53.853 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:17:53.858 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:17:53.910 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:51 - >>> Keycloak wird neu geladen <<<
+2026-10-25 16:17:54.247 | DEBUG    | pizzeria.config.dev.keycloak_populate:_remove_users:61 - Alle User außer 'admin' geloescht
+2026-10-25 16:17:54.248 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:64 - Aktuelles Verzeichnis: /Users/abdullah/SWE/Pizzeria
+2026-10-25 16:17:54.249 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:69 - CSV-Datei: extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 16:17:54.249 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizza-napoli'
+2026-10-25 16:17:54.250 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizza-napoli', email='info@pizzeria-napoli.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.250 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizza-napoli'
+2026-10-25 16:17:54.283 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=bedc395a-166c-49d9-8ec8-92972f7fbf6c
+2026-10-25 16:17:54.295 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='la-dolce-vita'
+2026-10-25 16:17:54.295 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='la-dolce-vita', email='kontakt@ladolcevita.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.295 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='la-dolce-vita'
+2026-10-25 16:17:54.338 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=a689ffa9-500d-41b0-ae94-cb23a8d817c8
+2026-10-25 16:17:54.349 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-roma'
+2026-10-25 16:17:54.349 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-roma', email='info@pizzeria-roma.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.349 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-roma'
+2026-10-25 16:17:54.385 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=3ea982de-17a6-4265-93bc-67bbc2b32b7d
+2026-10-25 16:17:54.394 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='mamma-mia'
+2026-10-25 16:17:54.394 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='mamma-mia', email='info@mammamia-pizzeria.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.395 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='mamma-mia'
+2026-10-25 16:17:54.425 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=6d3b3787-e1fc-4c27-955e-ae8c07cbd970
+2026-10-25 16:17:54.435 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='trattoria-sicilia'
+2026-10-25 16:17:54.435 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='trattoria-sicilia', email='kontakt@trattoria-sicilia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.436 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='trattoria-sicilia'
+2026-10-25 16:17:54.468 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=4e53576b-d7e3-4942-b90e-af14d6f968ae
+2026-10-25 16:17:54.482 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:82 - keycloak username='pizzeria-venezia'
+2026-10-25 16:17:54.482 | DEBUG    | pizzeria.security.user_service:create_user:125 - user=User(username='pizzeria-venezia', email='info@pizzeria-venezia.de', nachname='0', vorname='0', roles=[<Role.PIZZERIA: 'PIZZERIA'>], password='p')
+2026-10-25 16:17:54.482 | ERROR    | pizzeria.security.user_service:create_user:127 - keycloak create_user username='pizzeria-venezia'
+2026-10-25 16:17:54.514 | DEBUG    | pizzeria.security.user_service:create_user:142 - user_id=7204da1b-ee5f-4875-8421-94978778a49c
+2026-10-25 16:17:54.526 | DEBUG    | pizzeria.config.dev.keycloak_populate:_create_users:96 - Alle User zu 'pizzeria.csv' neu angelegt
+2026-10-25 16:17:54.526 | WARNING  | pizzeria.config.dev.keycloak_populate:populate:55 - >>> Keycloak wurde neu geladen <<<
+2026-10-25 16:17:54.529 | INFO     | pizzeria.banner:banner:128 - Python           sys.version_info(major=3, minor=15, micro=0, releaselevel='candidate', serial=2)
+2026-10-25 16:17:54.529 | INFO     | pizzeria.banner:banner:129 - Plattform        macosx-10.15-universal2
+2026-10-25 16:17:54.529 | INFO     | pizzeria.banner:banner:130 - FastAPI          0.143.2
+2026-10-25 16:17:54.530 | INFO     | pizzeria.banner:banner:131 - uvicorn          0.54.0
+2026-10-25 16:17:54.530 | INFO     | pizzeria.banner:banner:132 - Starlette        1.7.0
+2026-10-25 16:17:54.530 | INFO     | pizzeria.banner:banner:133 - Pydantic         2.13.5
+2026-10-25 16:17:54.530 | INFO     | pizzeria.banner:banner:134 - Strawberry       0.327.7
+2026-10-25 16:17:54.530 | INFO     | pizzeria.banner:banner:135 - SQLAlchemy       2.1.4
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:136 - psycopg          3.3.6
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:137 - DB URL           postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:138 - Identity Columns True
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:139 - Sequence         True
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:140 - Boolean          True
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:141 - Decimal          False
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:142 - Enum             True
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:143 - UPDATE RETURNING True
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:144 - python-keycloak  7.1.1
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:145 - cryptography     49.0.0
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:146 - openpyxl         3.1.5
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:147 - Environment      /Users/abdullah/SWE/Pizzeria/.venv
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:148 - User             abdullah
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:149 - Locale           ('de_DE', 'UTF-8')
+2026-10-25 16:17:54.531 | INFO     | pizzeria.banner:banner:150 - Rechnername      MacBookPro.fritz.box
+2026-10-25 16:17:54.542 | INFO     | pizzeria.banner:banner:151 - IP               192.168.178.55
+2026-10-25 16:17:54.543 | INFO     | pizzeria.banner:banner:152 - 11 Routes:
+2026-10-25 16:26:51.106 | INFO     | pizzeria.fastapi_app:lifespan:88 - Der Server wird heruntergefahren
+2026-10-25 16:26:51.107 | INFO     | pizzeria.fastapi_app:lifespan:89 - Connection-Pool fuer die DB wird getrennt.
+2026-10-25 16:26:55.891 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 16:26:55.891 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 16:26:55.891 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-25 16:26:55.891 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 16:26:55.891 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 16:26:55.891 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 16:26:55.893 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', verify=False)
+2026-10-25 16:26:55.893 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 16:26:55.893 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 16:26:55.896 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 16:26:55.897 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 16:26:55.897 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 16:26:56.630 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 16:26:56.630 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 16:26:56.830 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:26:56.835 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:26:57.016 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:26:57.020 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:26:57.072 | WARNING  | pizzeria.config.dev.db_populate:populate:71 - >>> Die DB wird neu geladen: postgresql+psycopg://pizzeria:***@localhost/pizzeria <<<
+2026-10-25 16:26:57.113 | DEBUG    | pizzeria.config.dev.db_populate:_load_csv_files:112 - begin
+2026-10-25 16:26:57.134 | DEBUG    | pizzeria.config.dev.db_populate:_load_csv_file:139 - tabelle=pizzeria
+2026-10-25 16:27:13.387 | INFO     | pizzeria.config.config:<module>:51 - Logging ist konfiguriert
+2026-10-25 16:27:13.387 | DEBUG    | pizzeria.config.config:<module>:52 - config: _config_file=/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/app.toml
+2026-10-25 16:27:13.387 | DEBUG    | pizzeria.config.config:<module>:53 - config: app_config={'server': {}, 'tls': {}, 'db': {'password': 'p', 'password-admin': 'p', 'host': 'localhost', 'log-statements': True}, 'mail': {'host': 'localhost', 'port': 1025}, 'excel': {'enabled': True}, 'keycloak': {'host': 'localhost', 'port': 8843, 'client-secret': 'k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', 'admin-password': 'p', 'csv': 'extras/compose/postgres/init/pizzeria/csv/pizzeria.csv'}, 'graphql': {'graphiql-enabled': True}, 'logger': {'debug-level': True}, 'dev': {'db-populate': True, 'keycloak-populate': True}}
+2026-10-25 16:27:13.387 | DEBUG    | pizzeria.config.db:<module>:39 - db: db_dialect=postgresql
+2026-10-25 16:27:13.387 | DEBUG    | pizzeria.config.db:<module>:59 - db: db_url=postgresql+psycopg://pizzeria:***@localhost/pizzeria
+2026-10-25 16:27:13.387 | DEBUG    | pizzeria.config.db:<module>:85 - db: db_connect_args={'sslmode': 'prefer', 'sslrootcert': '/Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/postgresql/server.crt'}
+2026-10-25 16:27:13.389 | DEBUG    | pizzeria.config.keycloak:<module>:73 - keycloak: keycloak_config=KeycloakConfig(server_url='https://localhost:8843/', realm_name='python', client_id='python-client', client_secret_key='k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP', verify=False)
+2026-10-25 16:27:13.389 | DEBUG    | pizzeria.config.keycloak:<module>:76 - keycloak: csv=extras/compose/postgres/init/pizzeria/csv/pizzeria.csv
+2026-10-25 16:27:13.389 | DEBUG    | pizzeria.config.keycloak:<module>:81 - keycloak admin: username=admin, password=p
+2026-10-25 16:27:13.392 | DEBUG    | pizzeria.config.mail:<module>:50 - mail_config=MailConfig(enabled=True, host='localhost', port=1025, timeout=1.0)
+2026-10-25 16:27:13.392 | DEBUG    | pizzeria.config.tls:<module>:34 - private keyfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/key.pem
+2026-10-25 16:27:13.392 | DEBUG    | pizzeria.config.tls:<module>:38 - certfile TLS: /Users/abdullah/SWE/Pizzeria/src/pizzeria/config/resources/tls/certificate.crt
+2026-10-25 16:27:14.072 | INFO     | pizzeria.repository.session_factory:<module>:48 - Engine fuer SQLAlchemy erzeugt
+2026-10-25 16:27:14.073 | INFO     | pizzeria.repository.session_factory:<module>:57 - Session-Factory fuer SQLAlchemy erzeugt
+2026-10-25 16:27:14.223 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:27:14.227 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:27:14.395 | DEBUG    | pizzeria.security.user_service:__init__:69 - client_id=e63f14b5-826d-4da7-835a-3dd2ab0ce51a für 'python-client'
+2026-10-25 16:27:14.402 | DEBUG    | pizzeria.security.user_service:__init__:75 - rolle_pizzeria={'id': '01ab6e4e-e1a4-4f23-ad48-93332d216737', 'name': 'pizzeria', 'description': '', 'composite': False, 'clientRole': True, 'containerId': 'e63f14b5-826d-4da7-835a-3dd2ab0ce51a'}
+2026-10-25 16:27:14.450 | WARNING  | pizzeria.config.dev.db_populate:populate:71 - >>> Die DB wird neu geladen: postgresql+psycopg://pizzeria:***@localhost/pizzeria <<<
+2026-10-25 16:27:14.487 | DEBUG    | pizzeria.config.dev.db_populate:_load_csv_files:112 - begin
+2026-10-25 16:27:14.508 | DEBUG    | pizzeria.config.dev.db_populate:_load_csv_file:139 - tabelle=pizzeria

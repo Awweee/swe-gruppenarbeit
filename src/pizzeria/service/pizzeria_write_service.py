@@ -13,13 +13,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-"""Geschäftslogik zum Schreiben von Pizzeriadaten."""
+"""Geschaeftslogik zum Schreiben von Pizzeriadaten."""
 
 from typing import Final
 
 from loguru import logger
 
-from pizzeria.repository import repository, Session
+from pizzeria.entity import Pizzeria
+from pizzeria.repository import Session, repository
 from pizzeria.security import User, UserService
 from pizzeria.service.exceptions import (
     EmailExistsError,
@@ -29,16 +30,15 @@ from pizzeria.service.exceptions import (
     VersionOutdatedError,
 )
 from pizzeria.service.pizzeria_dto import PizzeriaDTO
-lazy from pizzeria.entity import Pizzeria
 
 __all__ = ["pizzeriaWriteService"]
 
 
 class pizzeriaWriteService:
-    """Service-Klasse mit Geschäftslogik für Pizzerien."""
+    """Service-Klasse mit Geschaeftslogik fuer Pizzerien."""
 
     def __init__(self, repo: repository, user_service: UserService) -> None:
-        """Konstruktor mit abhängigem Repository und UserService."""
+        """Konstruktor mit abhaengigem Repository und UserService."""
         self.repo: repository = repo
         self.user_service: UserService = user_service
 
@@ -48,6 +48,8 @@ class pizzeriaWriteService:
         :param pizzeria: Die neue Pizzeria ohne ID
         :return: Die neu angelegte Pizzeria mit generierter ID
         :rtype: PizzeriaDTO
+        :raises EmptyUsernameError: Falls der Benutzername fehlt
+        :raises UsernameExistsError: Falls der Benutzername bereits existiert
         :raises EmailExistsError: Falls die Emailadresse bereits existiert
         """
         logger.debug(
@@ -67,35 +69,38 @@ class pizzeriaWriteService:
             raise UsernameExistsError(username)
 
         email: Final = pizzeria.email
-        if self.user_service.email_exists(email):
+
+        if email is not None and self.user_service.email_exists(email):
             raise EmailExistsError(email=email)
 
         user: Final = User(
             username=username,
-            email=pizzeria.email,
+            email=email if email is not None else "",
             nachname=pizzeria.name,
             vorname=pizzeria.name,
             password="p",  # ruff: ignore[hardcoded-password-func-arg] # NOSONAR
             roles=[],
         )
+
         user_id = self.user_service.create_user(user)
         logger.debug("user_id={}", user_id)
 
-        # durch "with" erhaelt man einen "Context Manager", der die Ressource/Session
-        # am Ende des Blocks schliesst
+        # Durch "with" erhaelt man einen "Context Manager", der die
+        # Ressource/Session am Ende des Blocks schliesst.
         with Session() as session:
-
-
             pizzeria_db: Final = self.repo.create(
                 pizzeria=pizzeria,
                 session=session,
             )
+
             pizzeria_dto: Final = PizzeriaDTO.from_pizzeria(pizzeria_db)
+
             session.commit()
 
         # TODO User aus Keycloak loeschen, falls die DB-Transaktion fehlschlaegt
 
         logger.debug("pizzeria_dto={}", pizzeria_dto)
+
         return pizzeria_dto
 
     def update(
@@ -104,16 +109,15 @@ class pizzeriaWriteService:
         pizzeria_id: int,
         version: int,
     ) -> PizzeriaDTO:
-        """Daten einer Pizzeria ändern.
+        """Daten einer Pizzeria aendern.
 
         :param pizzeria: Die neuen Daten
         :param pizzeria_id: ID der zu aktualisierenden Pizzeria
-        :param version: Version für optimistische Synchronisation
+        :param version: Version fuer optimistische Synchronisation
         :return: Die aktualisierte Pizzeria
         :rtype: PizzeriaDTO
         :raises NotFoundError: Falls die Pizzeria nicht existiert
         :raises VersionOutdatedError: Falls die Versionsnummer nicht aktuell ist
-        :raises EmailExistsError: Falls die Emailadresse bereits existiert
         """
         logger.debug(
             "pizzeria_id={}, version={}, {}",
@@ -134,7 +138,6 @@ class pizzeriaWriteService:
             if pizzeria_db.version > version:
                 raise VersionOutdatedError(version)
 
-
             pizzeria_db.set(pizzeria)
 
             if (
@@ -145,20 +148,24 @@ class pizzeriaWriteService:
             ) is None:
                 raise NotFoundError(pizzeria_id)
 
-            pizzeria_dto: Final = PizzeriaDTO.from_pizzeria(pizzeria_updated)
+            pizzeria_dto: Final = PizzeriaDTO.from_pizzeria(
+                pizzeria_updated
+            )
+
             logger.debug("{}", pizzeria_dto)
 
             session.commit()
 
-            # CAVEAT: Die erhoehte Versionsnummer ist erst nach COMMIT sichtbar
+            # CAVEAT: Die erhoehte Versionsnummer ist erst
+            # nach COMMIT sichtbar.
             pizzeria_dto.version += 1
 
             return pizzeria_dto
 
     def delete_by_id(self, pizzeria_id: int) -> None:
-        """Eine Pizzeria anhand ihrer ID löschen.
+        """Eine Pizzeria anhand ihrer ID loeschen.
 
-        :param pizzeria_id: ID der zu löschenden Pizzeria
+        :param pizzeria_id: ID der zu loeschenden Pizzeria
         """
         logger.debug("pizzeria_id={}", pizzeria_id)
 
@@ -167,4 +174,5 @@ class pizzeriaWriteService:
                 pizzeria_id=pizzeria_id,
                 session=session,
             )
+
             session.commit()

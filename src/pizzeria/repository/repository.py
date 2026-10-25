@@ -1,7 +1,6 @@
-__all__: list[str] = ["Repository"]
+"""Repository für den lesenden und schreibenden Zugriff auf Pizzerien."""
 
 from typing import Final
-lazy from collections.abc import Sequence
 
 from loguru import logger
 from sqlalchemy import func, select
@@ -9,8 +8,10 @@ from sqlalchemy.orm import Session, joinedload
 
 from pizzeria.entity import Pizzeria
 from pizzeria.repository.pageable import Pageable
-from pizzeria.repository.suchparameter import Suchparameter
 from pizzeria.repository.slice import Slice
+from pizzeria.repository.suchparameter import Suchparameter
+
+__all__ = ["repository"]
 
 
 class repository:
@@ -21,8 +22,8 @@ class repository:
         pizzeria_id: int | None,
         session: Session,
     ) -> Pizzeria | None:
-        logger.debug(f"Repository.find_by_id(pizzeria_id={pizzeria_id})")
         """Sucht eine Pizzeria anhand der ID."""
+        logger.debug("Repository.find_by_id(pizzeria_id={})", pizzeria_id)
 
         if pizzeria_id is None:
             return None
@@ -34,6 +35,7 @@ class repository:
 
         pizzeria: Final = session.scalar(statement)
         logger.debug("{}", pizzeria)
+
         return pizzeria
 
     def find(
@@ -42,13 +44,18 @@ class repository:
         pageable: Pageable,
         session: Session,
     ) -> Slice[Pizzeria]:
-        logger.debug(f"Repository.find(suchparameter={suchparameter})")
+        """Sucht Pizzerien anhand der Suchparameter."""
+        logger.debug(
+            "Repository.find(suchparameter={}, pageable={})",
+            suchparameter,
+            pageable,
+        )
 
-        if suchparameter is None or suchparameter.is_empty():
+        if suchparameter.is_empty():
             return self._find_all(pageable, session)
 
         if suchparameter.email is not None:
-            pizzeria = self._find_by_email(
+            pizzeria: Final = self._find_by_email(
                 email=suchparameter.email,
                 session=session,
             )
@@ -60,14 +67,11 @@ class repository:
             )
 
         if suchparameter.name is not None:
-            pizzeria = self._find_by_name(
+            return self._find_by_name(
                 teil=suchparameter.name,
                 pageable=pageable,
                 session=session,
             )
-
-            logger.debug("{}", pizzeria)
-            return Slice(content=(pizzeria,), total_elements=1)
 
         return Slice(content=(), total_elements=0)
 
@@ -76,14 +80,15 @@ class repository:
         pageable: Pageable,
         session: Session,
     ) -> Slice[Pizzeria]:
-        logger.debug(f"Repository._find_all(pageable={pageable})")
+        """Sucht alle Pizzerien mit Pagination."""
+        logger.debug("Repository._find_all(pageable={})", pageable)
 
         statement: Final = (
             (
                 select(Pizzeria)
                 .options(joinedload(Pizzeria.pizzen))
-                .offset(pageable.offset)
-                .limit(pageable.page_size)
+                .offset(pageable.number * pageable.size)
+                .limit(pageable.size)
             )
             if pageable.size != 0
             else select(Pizzeria).options(joinedload(Pizzeria.pizzen))
@@ -97,11 +102,11 @@ class repository:
             .select_from(Pizzeria)
         )
 
-        total_elements: Final = session.scalar(statement_count)
+        total_elements: Final = session.scalar(statement_count) or 0
         logger.debug("total_elements={}", total_elements)
 
         return Slice(
-            content=pizzerias,
+            content=tuple(pizzerias),
             total_elements=total_elements,
         )
 
@@ -110,7 +115,8 @@ class repository:
         email: str,
         session: Session,
     ) -> Pizzeria | None:
-        logger.debug(f"Repository._find_by_email(email={email})")
+        """Sucht eine Pizzeria anhand ihrer E-Mail-Adresse."""
+        logger.debug("Repository._find_by_email(email={})", email)
 
         statement: Final = (
             select(Pizzeria)
@@ -119,6 +125,7 @@ class repository:
 
         pizzeria: Final = session.scalar(statement)
         logger.debug("{}", pizzeria)
+
         return pizzeria
 
     def _find_by_name(
@@ -126,16 +133,25 @@ class repository:
         teil: str,
         pageable: Pageable,
         session: Session,
-    ) -> Slice[Pizzeria] | None:
+    ) -> Slice[Pizzeria]:
+        """Sucht Pizzerien anhand eines Namensteils."""
         logger.debug(
-            f"Repository._find_by_name(teil={teil}, pageable={pageable})"
+            "Repository._find_by_name(teil={}, pageable={})",
+            teil,
+            pageable,
         )
 
         statement: Final = (
-            select(Pizzeria)
-            .where(func.lower(Pizzeria.name).like(f"%{teil.lower()}%"))
-            .offset(pageable.offset)
-            .limit(pageable.page_size)
+            (
+                select(Pizzeria)
+                .where(func.lower(Pizzeria.name).like(f"%{teil.lower()}%"))
+                .offset(pageable.number * pageable.size)
+                .limit(pageable.size)
+            )
+            if pageable.size != 0
+            else select(Pizzeria).where(
+                func.lower(Pizzeria.name).like(f"%{teil.lower()}%")
+            )
         )
 
         pizzerias: Final = session.scalars(statement).all()
@@ -147,11 +163,11 @@ class repository:
             .where(func.lower(Pizzeria.name).like(f"%{teil.lower()}%"))
         )
 
-        total_elements: Final = session.scalar(statement_count)
+        total_elements: Final = session.scalar(statement_count) or 0
         logger.debug("total_elements={}", total_elements)
 
         return Slice(
-            content=pizzerias,
+            content=tuple(pizzerias),
             total_elements=total_elements,
         )
 
@@ -183,6 +199,7 @@ class repository:
         session.flush(objects=[pizzeria])
 
         logger.debug("pizzeria_id={}", pizzeria.id)
+
         return pizzeria
 
     def update(
@@ -206,7 +223,6 @@ class repository:
                 session=session,
             )
         ) is None:
-            # Pizzeriadaten wurden i.a. zuvor in der Session aktualisiert
             return None
 
         # session.add(pizzeria_db) nicht notwendig,
@@ -216,6 +232,7 @@ class repository:
         # nach COMMIT sichtbar
 
         logger.debug("{}", pizzeria_db)
+
         return pizzeria_db
 
     def delete_by_id(
@@ -241,4 +258,5 @@ class repository:
             return
 
         session.delete(pizzeria)
+
         logger.debug("ok")

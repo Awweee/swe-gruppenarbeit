@@ -54,7 +54,7 @@ host = "localhost"
 port = 8843
 # realm = "python"
 # client-id = "python-client"
-client-secret = "IM42jNfCjI3FdemeonvdfuGQOegHpTUlPw1UMESldW3fu2CyqCAE5BfFbdjXKK3tIoJpUpUNnK1N1IRNPqxeZY"
+client-secret = "k4JoGUYDZctHboZacL1oATXR2sX9OuZFTqcV8boYb2p2ZeqVZqvAsrDw2U8kIzHEgfy0zNfUkRQOTfMHy7lqwP"
 # admin = "admin"
 admin-password = "p"
 csv = "extras/compose/postgres/init/pizzeria/csv/pizzeria.csv"
@@ -68,5 +68,5 @@ graphiql-enabled = true
 debug-level = true
 
 [dev]
-db-populate = false
+db-populate = true
 keycloak-populate = true
