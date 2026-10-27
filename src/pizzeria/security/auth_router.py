@@ -43,7 +43,7 @@ async def request_body_to_dict(request: Request) -> dict[str, Any]:
         return body
 
 
-@router.api_route(path="/token", methods=["QUERY"])
+@router.api_route(path="/token", methods=["POST"])
 def token(
     body: Annotated[dict[str, Any], Depends(request_body_to_dict)],
     service: Annotated[TokenService, Depends(get_token_service)],

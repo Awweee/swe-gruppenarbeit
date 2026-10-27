@@ -54,3 +54,37 @@ class Service:
 
             logger.debug("{}", pizzeria_dto)
             return pizzeria_dto
+    def find(
+        self,
+        suchparameter: Suchparameter | None,
+        pageable: Pageable,
+    ) -> Slice[PizzeriaDTO]:
+        """Suche mit Suchparameter.
+
+        :param suchparameter: Suchparameter oder None
+        :return: Liste der gefundenen pizzeriaen
+        :rtype: Slice[pizzeriaDTO]
+        :raises NotFoundError: Falls keine pizzeriaen gefunden wurden
+        """
+        logger.debug("{}", suchparameter)
+        with Session() as session:
+            pizzeria_slice: Final = self.repository.find(
+                suchparameter=suchparameter,
+                pageable=pageable,
+                session=session,
+            )
+            if len(pizzeria_slice.content) == 0:
+                raise NotFoundError(suchparameter=suchparameter)
+
+            # tuple mit einem "Generator"-Ausdruck
+            # vgl. List Comprehension ab Python 2.0 (2000) https://peps.python.org/pep-0202
+            pizzerien_dto: Final = tuple(
+                PizzeriaDTO.from_pizzeria(pizzeria) for pizzeria in pizzeria_slice.content
+            )
+            session.commit()
+        pizzerien_dto_slice = Slice(
+            content=pizzerien_dto,
+            total_elements=pizzeria_slice.total_elements,
+        )
+        logger.debug("{}", pizzerien_dto_slice)
+        return pizzerien_dto_slice

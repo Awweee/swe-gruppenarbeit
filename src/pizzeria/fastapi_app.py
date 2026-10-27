@@ -45,6 +45,7 @@ from pizzeria.graphql_api import graphql_router
 from pizzeria.problem_details import ProblemDetails
 from pizzeria.repository.session_factory import engine
 from pizzeria.router.router import pizzeria_router
+from pizzeria.router.pizzeria_write_router import pizzeria_write_router
 from pizzeria.security import (
     AuthorizationError,
     LoginError,
@@ -143,7 +144,7 @@ async def log_response_time(
 # R E S T
 # --------------------------------------------------------------------------------------
 app.include_router(pizzeria_router, prefix="/rest")
-#app.include_router(pizzeria_write_router, prefix="/rest")
+app.include_router(pizzeria_write_router, prefix="/rest")
 app.include_router(auth_router, prefix="/auth")
 '''app.include_router(health_router, prefix="/health")
 app.include_router(shutdown_router, prefix="/admin")

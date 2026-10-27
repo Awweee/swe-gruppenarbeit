@@ -65,3 +65,82 @@ def get_by_id(
         content=pizzeria_model.model_dump(mode="json"),
         headers={ETAG: f'"{pizzeria.version}"'},
     )
+@pizzeria_router.get(
+    path="",
+    dependencies=[Depends(RolesRequired(Role.ADMIN))],
+    response_model=pizzeriaPageModel,
+    )
+def get(
+        find_model: Annotated[pizzeriaFindModel, Query()],
+        service: Annotated[service, Depends(get_service)],
+    ) -> pizzeriaPageModel:
+        """Suche mit Query-Parameter.
+
+        Siehe https://fastapi.tiangolo.com/tutorial/query-params und
+        https://fastapi.tiangolo.com/de/tutorial/query-param-models
+        :param find_model: Validierte Such- und Pagination-Parameter als Pydantic-Model
+        :param service: Injizierter Service für Geschäftslogik
+        :return: Eine Seite mit pizzeriaen-Daten
+        :raises NotFoundError: Falls keine pizzeriaen gefunden wurden
+        """
+        logger.debug("search={}", find_model)
+        result: Final = _find_page(service=service, find_model=find_model)
+        logger.debug("result={}", result)
+        return result
+
+@pizzeria_router.api_route(
+    path="/query",
+    methods=["QUERY"],
+    dependencies=[Depends(RolesRequired(Role.ADMIN))],
+    response_model=pizzeriaPageModel,
+)
+def query(
+    find_model: pizzeriaFindModel,
+    service: Annotated[service, Depends(get_service)],
+) -> pizzeriaPageModel:
+    """Suche mit HTTP-Methode _QUERY_.
+
+    **BEACHTE**: HTTP-Methode QUERY ist in FastAPI noch nicht "nativ" implementiert
+    https://github.com/fastapi/fastapi/issues/12965 und
+    https://www.rfc-editor.org/info/rfc10008
+    :param find_model: Validierte Suchparameter (einschließlich Pagination) als
+    Pydantic-Model aus dem Request-Body
+    :param service: Injizierter Service für Geschäftslogik
+    :return: Eine Seite mit pizzeriaen-Daten
+    :raises NotFoundError: Falls keine pizzeriaen gefunden wurden
+    """
+    logger.debug("search={}", find_model)
+    result: Final = _find_page(service=service, find_model=find_model)
+    logger.debug("result={}", result)
+    return result
+
+def _find_page(
+    service: service.Service,
+    find_model: pizzeriaFindModel,
+) -> pizzeriaPageModel:
+    pageable: Final = find_model.to_pageable()
+    pizzeria_slice: Final = service.find(
+        suchparameter=find_model.to_suchparameter(),
+        pageable=pageable,
+    )
+
+    pizzeria_models: Final = tuple(
+        pizzeriaResponseModel.from_dto(pizzeria) for pizzeria in pizzeria_slice.content
+    )
+
+    total_pages: Final = (
+        (pizzeria_slice.total_elements + pageable.size - 1) // pageable.size
+        if pageable.size > 0
+        else 1
+    )
+
+    return pizzeriaPageModel(
+        content=pizzeria_models,
+        page={
+            "size": pageable.size,
+            "number": pageable.number,
+            "total_elements": pizzeria_slice.total_elements,
+            "total_pages": total_pages,
+        },
+    )
+

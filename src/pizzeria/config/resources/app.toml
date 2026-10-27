@@ -69,4 +69,4 @@ debug-level = true
 
 [dev]
 db-populate = false
-keycloak-populate = true
+keycloak-populate = false

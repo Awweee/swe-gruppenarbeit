@@ -10,10 +10,10 @@ from pizzeria.repository import (
     DEFAULT_PAGE_SIZE,
     MAX_PAGE_SIZE,
     Pageable,
-    suchparameter,
+    Suchparameter,
 )
 from pizzeria.router.pizza_model import PizzaModel
-lazy from pizzeria.service import pizzeriaDTO
+lazy from pizzeria.service import PizzeriaDTO
 
 __all__ = ["pizzeriaFindModel", "pizzeriaPageModel", "pizzeriaResponseModel"]
 
@@ -22,7 +22,7 @@ class pizzeriaFindModel(BaseModel):
     """Suchparameter und Pagination für die pizzeriaensuche."""
 
     email: str | None = None
-    nachname: str | None = None
+    name: str | None = None
     page: Annotated[int, Field(ge=DEFAULT_PAGE_NUMBER)] = DEFAULT_PAGE_NUMBER
     size: Annotated[int, Field(ge=0, le=MAX_PAGE_SIZE)] = DEFAULT_PAGE_SIZE
 
@@ -36,9 +36,9 @@ class pizzeriaFindModel(BaseModel):
         """Erzeugt die Pagination-Daten aus den validierten Parametern."""
         return Pageable(number=self.page, size=self.size)
 
-    def to_suchparameter(self) -> suchparameter:
+    def to_suchparameter(self) -> Suchparameter:
         """Erzeugt Suchparameter für den Service."""
-        return suchparameter(email=self.email, nachname=self.nachname)
+        return Suchparameter(email=self.email, name=self.name)
 
 
 class AdresseResponseModel(BaseModel):
@@ -75,7 +75,7 @@ class pizzeriaResponseModel(BaseModel):
     # https://pydantic.dev/docs/validation/latest/api/pydantic/config/#pydantic.config.ConfigDict
 
     @classmethod
-    def from_dto(cls, pizzeria: pizzeriaDTO) -> pizzeriaResponseModel:
+    def from_dto(cls, pizzeria: PizzeriaDTO) -> pizzeriaResponseModel:
         """Konvertiert ein pizzeriaDTO in ein Pydantic-Modell für einen Response.
 
         Der Aufruf von `model_validate` erfordert die Übernahme der korrespondierende
