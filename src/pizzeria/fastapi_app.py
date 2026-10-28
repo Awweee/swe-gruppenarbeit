@@ -44,8 +44,10 @@ from pizzeria.config.dev.keycloak_populate_router import (
 from pizzeria.graphql_api import graphql_router
 from pizzeria.problem_details import ProblemDetails
 from pizzeria.repository.session_factory import engine
-from pizzeria.router.router import pizzeria_router
-from pizzeria.router.pizzeria_write_router import pizzeria_write_router
+from pizzeria.router.router import (
+    pizzeria_router,
+)
+from pizzeria.router.pizzeria_write_router import pizzeria_write_router 
 from pizzeria.security import (
     AuthorizationError,
     LoginError,
@@ -53,15 +55,21 @@ from pizzeria.security import (
     set_response_headers,
 )
 from pizzeria.service import (
+    EmailExistsError,
     ForbiddenError,
     NotFoundError,
+    UsernameExistsError,
+    VersionOutdatedError,
 )
 
 __all__ = [
     "authorization_error_handler",
+    "email_exists_error_handler",
     "forbidden_error_handler",
     "login_error_handler",
     "not_found_error_handler",
+    "username_exists_error_handler",
+    "version_outdated_error_handler",
 
 ]
 
@@ -146,10 +154,7 @@ async def log_response_time(
 app.include_router(pizzeria_router, prefix="/rest")
 app.include_router(pizzeria_write_router, prefix="/rest")
 app.include_router(auth_router, prefix="/auth")
-'''app.include_router(health_router, prefix="/health")
-app.include_router(shutdown_router, prefix="/admin")
-app.include_router(hello_router, prefix="/hello")
-'''
+
 if dev_db_populate:
     app.include_router(db_populate_router, prefix="/dev")
 if dev_keycloak_populate:
@@ -259,50 +264,50 @@ def login_error_handler(_request: Request, err: LoginError) -> Response:
     ).to_response()
 
 
-# @app.exception_handler(EmailExistsError)
-# def email_exists_error_handler(_request: Request, err: EmailExistsError) -> Response:
-#     """Exception-Handling für EmailExistsError.
+@app.exception_handler(EmailExistsError)
+def email_exists_error_handler(_request: Request, err: EmailExistsError) -> Response:
+    """Exception-Handling für EmailExistsError.
 
-#     :param err: Exception, falls die Emailadresse des neuen oder zu ändernden pizzeriaen
-#         bereits existiert
-#     :return: Response mit Statuscode 422
-#     :rtype: Response
-#     """
-#     return ProblemDetails.create(
-#         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-#         detail=str(err),
-#     ).to_response()
-
-
-# @app.exception_handler(UsernameExistsError)
-# def username_exists_error_handler(
-#     _request: Request,
-#     err: UsernameExistsError,
-# ) -> Response:
-#     """Exception-Handling für UsernameExistsError.
-
-#     :param err: Exception, falls der Username für den neuen pizzeriaen bereits existiert
-#     :return: Response mit Statuscode 422
-#     :rtype: Response
-#     """
-#     return ProblemDetails.create(
-#         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-#         detail=str(err),
-#     ).to_response()
+    :param err: Exception, falls die Emailadresse des neuen oder zu ändernden pizzeriaen
+        bereits existiert
+    :return: Response mit Statuscode 422
+    :rtype: Response
+    """
+    return ProblemDetails.create(
+        status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+        detail=str(err),
+    ).to_response()
 
 
-# @app.exception_handler(VersionOutdatedError)
-# def version_outdated_error_handler(
-#     _request: Request,
-#     err: VersionOutdatedError,
-# ) -> Response:
-#     """Exception-Handling für VersionOutdatedError.
+@app.exception_handler(UsernameExistsError)
+def username_exists_error_handler(
+    _request: Request,
+    err: UsernameExistsError,
+) -> Response:
+    """Exception-Handling für UsernameExistsError.
 
-#     :param _err: Exception, falls die Versionsnummer zum Aktualisieren veraltet ist
-#     :return: Response mit Statuscode 412
-#     :rtype: Response
-#     """
-#     return ProblemDetails.create(
-#         status_code=status.HTTP_412_PRECONDITION_FAILED,
-#         detail=str(err),
-#     ).to_response()
+    :param err: Exception, falls der Username für den neuen pizzeriaen bereits existiert
+    :return: Response mit Statuscode 422
+    :rtype: Response
+    """
+    return ProblemDetails.create(
+        status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+        detail=str(err),
+    ).to_response()
+
+
+@app.exception_handler(VersionOutdatedError)
+def version_outdated_error_handler(
+    _request: Request,
+    err: VersionOutdatedError,
+) -> Response:
+    """Exception-Handling für VersionOutdatedError.
+
+    :param _err: Exception, falls die Versionsnummer zum Aktualisieren veraltet ist
+    :return: Response mit Statuscode 412
+    :rtype: Response
+    """
+    return ProblemDetails.create(
+        status_code=status.HTTP_412_PRECONDITION_FAILED,
+        detail=str(err),
+    ).to_response()

@@ -3,7 +3,8 @@
 from pizzeria.graphql_api.graphql_types import (
     AdresseInput,
     CreatePayload,
-    pizzeriaInput,
+    PizzeriaInput,
+    PizzaInput,
     RechnungInput,
     Suchparameter,
 )
@@ -13,7 +14,7 @@ __all__ = [
     "AdresseInput",
     "CreatePayload",
     "Mutation",
-    "pizzeriaInput",
+    "PizzeriaInput",
     "Query",
     "RechnungInput",
     "Suchparameter",

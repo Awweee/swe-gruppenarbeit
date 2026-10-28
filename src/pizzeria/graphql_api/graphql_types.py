@@ -21,17 +21,18 @@ lazy from decimal import Decimal
 import strawberry
 
 lazy from pizzeria.entity import (
-    Facharzt,
-    Familienstand,
-    Geschlecht,
+    Pizza,
+    Pizzeria,
+    Adresse,
 )
 
 __all__ = [
     "AdresseInput",
     "CreatePayload",
-    "pizzeriaInput",
+    "PizzeriaInput",
     "RechnungInput",
     "Suchparameter",
+    "PizzaInput",
 ]
 
 # SDL (schema definition language):
@@ -45,8 +46,6 @@ __all__ = [
 # type Mutation {
 #     create(pizzeria_input: pizzeriaInput!): CreatePayload!
 # }
-
-
 @strawberry.input
 class Suchparameter:
     """Suchparameter für die Suche nach pizzeriaen."""
@@ -57,6 +56,21 @@ class Suchparameter:
     email: str | None = None
     """Emailadresse als Suchkriterium."""
 
+@strawberry.input
+class PizzaInput:
+    """Daten für eine neue Pizza."""
+
+    name: str
+    """Name der Pizza."""
+
+    beschreibung: str | None = None
+    """Beschreibung der Pizza."""
+
+    preis: Decimal
+    """Preis der Pizza."""
+
+    vegetarisch: bool
+    """Gibt an, ob die Pizza vegetarisch ist."""
 
 @strawberry.input
 class AdresseInput:
@@ -81,7 +95,7 @@ class RechnungInput:
 
 
 @strawberry.input
-class pizzeriaInput:
+class PizzeriaInput:
     """Daten für einen neuen pizzeriaen."""
 
     name: str
@@ -92,6 +106,11 @@ class pizzeriaInput:
 
     adresse: AdresseInput
     """Adresse."""
+
+    telefon: str | None = None
+    """Telefonnummer."""
+
+    pizzen: list[PizzaInput] | None = None
 
 
 @strawberry.type
@@ -112,3 +131,4 @@ class LoginResult:
     """Gültigkeitsdauer des Tokens."""
     roles: list[str]
     """Rollen des eingeloggten Users."""
+
