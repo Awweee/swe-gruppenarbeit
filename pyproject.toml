@@ -357,6 +357,10 @@ disallow_untyped_calls = false
 
 [tool.pytest]
 minversion = "9.0"
+markers = [
+    "rest: REST-Integrationstests",
+    "get_request: Integrationstests für GET-Anfragen",
+]
 addopts = [
   "--strict-config",
   "--strict-markers",
