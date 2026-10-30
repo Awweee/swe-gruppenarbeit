@@ -44,15 +44,17 @@ from pizzeria.config.dev.keycloak_populate_router import (
 from pizzeria.graphql_api import graphql_router
 from pizzeria.problem_details import ProblemDetails
 from pizzeria.repository.session_factory import engine
+from pizzeria.router.pizzeria_write_router import pizzeria_write_router
 from pizzeria.router.router import (
     pizzeria_router,
 )
-from pizzeria.router.pizzeria_write_router import pizzeria_write_router 
 from pizzeria.security import (
     AuthorizationError,
     LoginError,
-    router as auth_router,
     set_response_headers,
+)
+from pizzeria.security import (
+    router as auth_router,
 )
 from pizzeria.service import (
     EmailExistsError,

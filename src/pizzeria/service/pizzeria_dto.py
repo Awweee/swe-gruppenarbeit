@@ -2,8 +2,11 @@
 from dataclasses import dataclass
 
 import strawberry
+
 from pizzeria.entity.pizzeria import Pizzeria
 from pizzeria.service.adresse_dto import AdresseDTO
+
+
 @dataclass(eq=False, slots=True, kw_only=True)
 @strawberry.type(name="pizzeria")
 class PizzeriaDTO:

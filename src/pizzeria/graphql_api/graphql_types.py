@@ -21,9 +21,9 @@ lazy from decimal import Decimal
 import strawberry
 
 lazy from pizzeria.entity import (
+    Adresse,
     Pizza,
     Pizzeria,
-    Adresse,
 )
 
 __all__ = [

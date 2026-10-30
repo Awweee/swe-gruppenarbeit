@@ -4,9 +4,9 @@ from http import HTTPStatus
 from typing import Final
 
 import pytest
-from common_api_test import certificate_path, login, rest_url, timeout
 from requests import get
 
+from common_api_test import certificate_path, login, rest_url, timeout
 
 @pytest.mark.rest
 @pytest.mark.get_request

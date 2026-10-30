@@ -2,8 +2,6 @@ from datetime import date
 from pathlib import Path
 
 import pytest
-from typer.testing import CliRunner
-
 from scripts.prepare_release import (
     RELEASE_NOTES_HEADER,
     BumpType,
@@ -13,6 +11,7 @@ from scripts.prepare_release import (
     update_release_notes,
     update_version_file,
 )
+from typer.testing import CliRunner
 
 runner = CliRunner()
 

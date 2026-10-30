@@ -9,8 +9,8 @@ from pizzeria.service.exceptions import (
     VersionOutdatedError,
 )
 from pizzeria.service.pizzeria_dto import PizzeriaDTO
-from pizzeria.service.service import Service
 from pizzeria.service.pizzeria_write_service import pizzeriaWriteService
+from pizzeria.service.service import Service
 
 # https://docs.python.org/3/tutorial/modules.html#importing-from-a-package
 __all__ = [

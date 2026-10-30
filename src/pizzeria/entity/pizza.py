@@ -4,7 +4,7 @@ from decimal import Decimal
 from typing import TYPE_CHECKING, override
 
 from sqlalchemy import ForeignKey, Identity, Numeric
-from sqlalchemy.orm import Mapped, mapped_column, relationship, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from pizzeria.entity.base import Base
 

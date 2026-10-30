@@ -5,17 +5,17 @@ from collections.abc import Sequence
 from pizzeria.router.adresse_model import AdresseModel
 from pizzeria.router.pizza_model import PizzaModel
 from pizzeria.router.pizzeria_model import PizzeriaModel
-from pizzeria.router.router import (
-    get,
-    get_by_id,
-    pizzeria_router,
-    query,
-)
 from pizzeria.router.pizzeria_write_router import (
     delete_by_id,
     pizzeria_write_router,
     post,
     put,
+)
+from pizzeria.router.router import (
+    get,
+    get_by_id,
+    pizzeria_router,
+    query,
 )
 
 __all__: Sequence[str] = [

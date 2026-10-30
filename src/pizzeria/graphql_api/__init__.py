@@ -3,8 +3,8 @@
 from pizzeria.graphql_api.graphql_types import (
     AdresseInput,
     CreatePayload,
-    PizzeriaInput,
     PizzaInput,
+    PizzeriaInput,
     RechnungInput,
     Suchparameter,
 )

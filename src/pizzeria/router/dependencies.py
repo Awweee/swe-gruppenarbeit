@@ -21,8 +21,8 @@ from fastapi import Depends
 
 from pizzeria.repository.repository import repository
 from pizzeria.security.dependencies import get_user_service
-from pizzeria.service.service import Service
 from pizzeria.service.pizzeria_write_service import pizzeriaWriteService
+from pizzeria.service.service import Service
 lazy from pizzeria.security.user_service import UserService
 
 
