@@ -12,7 +12,6 @@ from typing import Any, Final
 
 from requests import get, post, request
 
-
 __all__ = [
     "base_url",
     "certificate_path",

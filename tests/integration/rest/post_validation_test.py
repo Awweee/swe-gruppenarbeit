@@ -5,9 +5,8 @@ from http import HTTPStatus
 from typing import Any, Final
 
 import pytest
-from requests import post
-
 from common_api_test import certificate_path, rest_url, timeout
+from requests import post
 
 
 @pytest.mark.rest

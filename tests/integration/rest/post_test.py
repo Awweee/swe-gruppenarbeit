@@ -5,9 +5,8 @@ from typing import Any, Final
 from uuid import uuid4
 
 import pytest
-from requests import post
-
 from common_api_test import certificate_path, rest_url, timeout
+from requests import post
 
 
 @pytest.mark.rest

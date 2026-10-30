@@ -372,6 +372,9 @@ filterwarnings = [
 ]
 timeout = "20"
 
+[tool.pyrefly]
+search-path = ["src", "tests/integration"]
+
 [tool.coverage.run]
 patch = ["subprocess", "_exit"]
 parallel = true
